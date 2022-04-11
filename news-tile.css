@@ -1,3 +1,26 @@
 .news-tile {
-
+    display: block;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 800px;
+    height: 150px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.news-tile h2 {
+    margin-bottom: 0.5em;
+    color: black;
+}
+.news-tile:hover h2,
+.news-tile:focus h2 {
+    color: black;
+}
+.news-tile p {
+    color: grey;
+    display: inline;
+}
+.news-tile p b {
+    color: #903331;
 }

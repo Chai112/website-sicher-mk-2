@@ -49,6 +49,9 @@
     transition: background-size 400ms;
     padding-bottom: 8px;
     text-overflow: ellipsis;
+    font-weight: bold;
+    color: black;
+    text-align: left;
 }
 .tile p {
     padding-top: 2em;
@@ -57,6 +60,7 @@
 .tile:focus h2 {
     opacity: 100%;
     background-size: 0 4px, 80% 4px;
+    color: white;
 }
 .tile:hover img,
 .tile:focus img {

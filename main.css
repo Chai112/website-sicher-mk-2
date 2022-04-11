@@ -20,7 +20,8 @@ h1 {
 h2 {
     margin-bottom: 16px;
     font-size: 18pt;
-    font-weight: bold;
+    color: grey;
+    text-align: center;
 }
 h3 {
     font-size: 30pt;
@@ -31,5 +32,16 @@ h3 {
 
 .spacer {
     height: 100px;
+}
+.mini-spacer {
+    height: 20px;
+}
+.divider {
+    border-bottom-color: #eee;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 

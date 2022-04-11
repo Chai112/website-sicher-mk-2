@@ -3,6 +3,10 @@
     max-width: 1200px;
     padding: 0px;
 }
+.section.navbar {
+    padding-top: 0;
+    background-color: #fff;
+}
 
 .navbar {
     background:#fff;
@@ -48,8 +52,4 @@
 }
 .navbar-toggler-icon {
     color: #000;
-}
-
-.navbar.section {
-    padding: 0;
 }
