@@ -1,0 +1,35 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica";
+    background: #903331;
+}
+.container {
+    margin: 8px;
+    padding: 8px;
+}
+h1 {
+    font-weight: bolder;
+    border-left-color: #903331;
+    border-left-width: 8px;
+    border-left-style: solid;
+    padding-left:16px;
+    margin-bottom: 16px;
+    line-height: 45pt;
+}
+h2 {
+    margin-bottom: 16px;
+    font-size: 18pt;
+    font-weight: bold;
+}
+h3 {
+    font-size: 30pt;
+    text-align: center;
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+
+.spacer {
+    height: 100px;
+}
+

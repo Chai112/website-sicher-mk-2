@@ -1,0 +1,55 @@
+.section.navbar .container {
+    margin: auto;
+    max-width: 1200px;
+    padding: 0px;
+}
+
+.navbar {
+    background:#fff;
+    padding: 0px;
+    font-weight: bold;
+    transition: .2s ease;
+}
+/* both have navbar and b class */
+.navbar.at-top {
+    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
+    background-color: #00000000;
+}
+.navbar.at-top .navbar-brand,
+.navbar.at-top .navbar-collapse .navbar-nav .nav-item .nav-link
+{
+    color: #fff;
+}
+
+.nav-link,
+.navbar-brand img {
+    color: #903331;
+    cursor: pointer;
+
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+    line-height: 1.5cm;
+    height: 2cm;
+}
+.nav-link {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+    line-height: 1.5cm;
+    height: 2cm;
+}
+.nav-link:hover {
+    color: #fff;
+    opacity: 100;
+    transition: .2s ease;
+    background-color: #903331;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+.navbar-toggler-icon {
+    color: #000;
+}
+
+.navbar.section {
+    padding: 0;
+}

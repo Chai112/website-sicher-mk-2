@@ -1,0 +1,17 @@
+.section {
+    background-color: #fff;
+    padding-top: 5em;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.section .container {
+    margin: auto;
+    max-width: 1200px;
+    padding: 0cm;
+}
+#footer {
+    background-image: url("img/fr3-blurred.jpg");
+    color: #fff;
+    margin: 0;
+    padding-bottom: 5em;
+}
