@@ -60,6 +60,7 @@
 
 @media (max-width: 900px) {
     .col-2-shown {
-        display: none;
+        transition: all 200ms ease;
+        margin-left: -500px;
     }
 }

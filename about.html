@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+ 
+        <title>SICHER</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="navbar.css">
+        <link rel="stylesheet" type="text/css" href="navcover.css">
+        <link rel="stylesheet" type="text/css" href="carousel.css">
+        <link rel="stylesheet" type="text/css" href="tile.css">
+        <link rel="stylesheet" type="text/css" href="news-tile.css">
+        <link rel="stylesheet" type="text/css" href="sections.css">
+
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            $(function() {
+                $("#header").load("nav.html");
+            });
+        </script>
+
+        <!-- FOR DEBUGGING ONLY -->
+    
+    </head>
+    <body>
+        <div id="header"></div>
+        <script>
+            $(document).ready(function(){
+                function reveal() {
+                    var reveals = document.querySelectorAll(".animation-up");
+                    for (var i = 0; i < reveals.length; i++) {
+                        var windowHeight = window.innerHeight;
+                        var elementTop = reveals[i].getBoundingClientRect().top;
+                        var elementVisible = 0;
+                        if (elementTop < windowHeight - elementVisible) {
+                            reveals[i].classList.add("c-animation-up");
+                        } else {
+                            reveals[i].classList.remove("c-animation-up");
+                        }
+                    }
+                }
+                window.addEventListener("scroll", reveal);
+
+                // To check the scroll position on page load
+                reveal();
+
+                $("#carousel-next-page").click(function () {
+                    $('html, body').animate({
+                        scrollTop: screen.height - 110 
+                    }, 800, function(){});
+                });
+            });
+
+        </script>
+        <div class="section" id="footer">
+            <div class="container">
+                <div class="mini-spacer"></div>
+                <div class="row">
+                    <div class="col">
+                        <h1>Contact Us</h1>
+                        <h2>contactus@sicherthai.com</h2>
+                        <h2>+(66) 2351 0246</h2>
+                        <h2>+(66) 829 599 593</h2>
+                        <br>
+                        <p>Sicher Company Limited<br>
+                            57 Witthayu Rd, Lumphini, Pathum Wan District,<br>Bangkok 10330, 18th floor</p>
+                            <br>
+                            <p>Copyright © Sicher Co., Ltd. 2022<br>
+                                Made by Chaidhat Chaimongkol</p>
+                    </div>
+                    <div class="col">
+                        <h1>Follow Us</h1>
+                        <button class="email" onclick="window.location.href='mailto:contactus@sicherthai.com'">
+                        <button class="facebook" onclick="window.location.href='https://'">
+                        <button class="linkedin" onclick="window.location.href='https://'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

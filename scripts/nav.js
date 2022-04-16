@@ -1,6 +1,24 @@
 var showingNavcover = false;
-console.log("init");
+
 $(document).ready(function(){
+    checkShowTop();
+
+    window.onscroll = function() {
+        checkShowTop();
+    }
+    var forceAtTop = false;
+    function checkShowTop () {
+        var currentScrollPos = window.pageYOffset;
+        if (currentScrollPos < 700) {
+            document.getElementById("navbar").classList.add("at-top");
+            document.getElementById("navbar").classList.remove("shadow");
+        } else {
+            if (!forceAtTop) {
+                document.getElementById("navbar").classList.remove("at-top");
+                document.getElementById("navbar").classList.add("shadow");
+            }
+        }
+    }
     $("#navcover-section").css("display", "none");
     $("#services").click(function() {
         console.log("a");
@@ -21,68 +39,40 @@ $(document).ready(function(){
             document.getElementById("navbar").classList.add("at-top");
             document.getElementById("navbar").classList.remove("shadow");
             forceAtTop = true; 
+            showingNavcover = true;
         } else {
-            $("#services").removeClass("force-on");
-            $("#navcover").css("opacity", "0%");
-            setTimeout(
-            function() 
-            {
-                $("#navcover-section").css("display", "none");
-            }, 500);
-            $('html, body').css({
-                overflow: 'auto',
-                height: 'auto'
-            });
-            forceAtTop = false;
+            hideNavCover();
         }
-        showingNavcover = !showingNavcover;
+    });
+    $("#navcover").click(function() {
+        setTimeout(
+        function() 
+        {
+            if (!hasElementOnNavCoverBeenClicked) {
+                hideNavCover();
+            }
+            hasElementOnNavCoverBeenClicked = false;
+        }, 10);
     });
 
-    const navdata = 
-    {
-        "items": [
-            {
-                "name": "Process Safety Management",
-                "items": [
-                    {"name": "Process Safety Training", "link": "psm/a"},
-                    {"name": "Process Safety Consulting", "link": "psm/c"},
-                    {"name": "Process Safety Auditing", "link": "psm/b"},
-                ]
-            },
-            {
-                "name": "Construction Safety Management Consulting",
-                "items": [
-                ]
-            },
-            {
-                "name": "EHS Software and Technological Solutions",
-                "items": [
-                ]
-            },
-            {
-                "name": "Energy Management",
-                "items": [
-                    {"name": "Solar Panels", "link": "psm/a"},
-                    {"name": "Energy Storage", "link": "psm/a"},
-                    {"name": "EV Charging", "link": "psm/a"},
-                    {"name": "Wind Turbines", "link": "psm/a"},
-                ]
-            },
-            {
-                "name": "Behaviour Based Safety",
-                "items": [
-                ]
-            },
-            {
-                "name": "Maintenance and Inspection",
-                "items": [
-                    {"name": "Training", "link": "psm/a"},
-                    {"name": "Non-Destructive Testing", "link": "psm/a"},
-                    {"name": "Mechanical, Electrical and Plumbing (MEP)", "link": "psm/a"},
-                ]
-            },
-        ]
-    };
+    function hideNavCover() {
+        showingNavcover = !showingNavcover;
+        $("#services").removeClass("force-on");
+        $("#navcover").css("opacity", "0%");
+        setTimeout(
+        function() 
+        {
+            $("#navcover-section").css("display", "none");
+        }, 500);
+        $('html, body').css({
+            overflow: 'auto',
+            height: 'auto'
+        });
+        forceAtTop = false;
+        showingNavcover = false;
+    }
+
+    var hasElementOnNavCoverBeenClicked = false;
 
     // show first column
     for (let i = 0; i < navdata.items.length; i++) {
@@ -102,6 +92,7 @@ $(document).ready(function(){
 
         // handle first column click
         $(`#${idName}`).click( function () {
+            hasElementOnNavCoverBeenClicked = true;
             $("#navcover-col-1").addClass("col-2-shown");
 
             // handle force-on class on all first rows
@@ -137,8 +128,58 @@ $(document).ready(function(){
 
                 // handle second column click
                 $(`#${idName}`).click( function () {
+                    hasElementOnNavCoverBeenClicked = true;
                 });
             }
         });
     }
+    function removeAllFirstRow() {
+
+    }
 });
+
+const navdata = 
+{
+    "items": [
+        {
+            "name": "Process Safety Management",
+            "items": [
+                {"name": "Process Safety Training", "link": "psm/a"},
+                {"name": "Process Safety Consulting", "link": "psm/c"},
+                {"name": "Process Safety Auditing", "link": "psm/b"},
+            ]
+        },
+        {
+            "name": "Construction Safety Management Consulting",
+            "items": [
+            ]
+        },
+        {
+            "name": "EHS Software and Technological Solutions",
+            "items": [
+            ]
+        },
+        {
+            "name": "Energy Management",
+            "items": [
+                {"name": "Solar Panels", "link": "psm/a"},
+                {"name": "Energy Storage", "link": "psm/a"},
+                {"name": "EV Charging", "link": "psm/a"},
+                {"name": "Wind Turbines", "link": "psm/a"},
+            ]
+        },
+        {
+            "name": "Behaviour Based Safety",
+            "items": [
+            ]
+        },
+        {
+            "name": "Maintenance and Inspection",
+            "items": [
+                {"name": "Training", "link": "psm/a"},
+                {"name": "Non-Destructive Testing", "link": "psm/a"},
+                {"name": "Mechanical, Electrical and Plumbing (MEP)", "link": "psm/a"},
+            ]
+        },
+    ]
+};
