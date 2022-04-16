@@ -2,7 +2,6 @@ var showingNavcover = false;
 
 $(document).ready(function(){
     checkShowTop();
-
     window.onscroll = function() {
         checkShowTop();
     }

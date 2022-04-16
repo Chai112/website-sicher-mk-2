@@ -1,53 +1,53 @@
-.top.carousel-item {
+.top {
     height: 100vh;
     position: relative;
 }
-.top.carousel-item img {
+.top img {
     position: absolute;
 
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-.top.carousel-item .logo {
+.top .logo {
     position: relative;
     height: 5em;
     width: auto;
     padding-right: 3em;
 }
-.top.carousel-item .section {
+.top .section {
     margin: 0;
     padding: 0;
 }
-.top.carousel-item .text {
+.top .text {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute;
 }
-.top.carousel-item .text * {
+.top .text * {
 
     color: #fff;
     border-width: 0;
     text-shadow: 5px 5px .3em #00000055;
     animation: 1s ease-out 0s 1 slideInFromLeft;
 }
-.top.carousel-item .text h1 {
+.top .text h1 {
     font-size: 70pt;
     line-height: 72pt;
 }
-.top.carousel-item .text h1 b {
+.top .text h1 b {
     font-family: "century";
     font-weight: normal;
 }
-.top.carousel-item .text h2 {
+.top .text h2 {
     margin-left: 1em;
 
     font-size: 20pt;
     max-width: 1100px;
     text-align: left;
 }
-.top.carousel-item .text p {
+.top .text p {
     margin-left: 1em;
 
     margin-top: 3em;
@@ -56,32 +56,32 @@
 }
 
 @media (max-width: 900px) {
-    .top.carousel-item .section .container {
+    .top .section .container {
         padding: 0;
     }
-    .top.carousel-item .text {
+    .top .text {
         width: 100%;
         text-align: center;
     }
-    .top.carousel-item .text h1 {
+    .top .text h1 {
         font-size: 40pt;
         margin-left: 0;
         line-height: 40pt;
     }
-    .top.carousel-item .text h2 {
+    .top .text h2 {
         margin-top: 2em;
         margin-left: 0;
         font-size: 16pt;
         text-align: center;
     }
-    .top.carousel-item .text p {
+    .top .text p {
         margin-top: 2em;
         font-size: 12pt;
     }
-    .top.carousel-item {
+    .top {
         height: 100vh;
     }
-    .top.carousel-item .logo {
+    .top .logo {
         margin: auto;
         padding: 0;
     }
@@ -98,6 +98,17 @@
     }
 }
 
+.top.splash {
+    height: 50vh;
+    z-index: -500;
+}
+.top.splash .text {
+    right: 50%;
+    transform: translateX(50%);
+}
+.top.splash h1 {
+    padding-left: 0;
+}
 
 
 

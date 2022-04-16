@@ -5,7 +5,7 @@
 <html lang="en">
     <head>
  
-        <title>SICHER</title>
+    <title>SICHER</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
@@ -21,16 +21,15 @@
         <script src="lib/bootstrap/js/bootstrap.min.js"></script>
         <script>
             $(function() {
-                $("#header").load("template/nav.html");
-                $("#footer").load("template/footer.html");
+                $("#placeholder-header").load("template/nav.html");
+                $("#placeholder-footer").load("template/footer.html");
             });
         </script>
-
-        <!-- FOR DEBUGGING ONLY -->
+        <script src="scripts/slow-scroll.js"></script>
     
     </head>
     <body>
-        <div id="header"></div>
+        <div id="placeholder-header"></div>
         <script>
             $(document).ready(function(){
                 function reveal() {
@@ -70,7 +69,7 @@
                         <img src="img/fr2.jpg" alt="Responsive image">
                         <div class="section">
                             <div class="container">
-                                <div class="text">
+                                <div class="text slow-scroll">
                                     <h1><b>We are SICHER.</b></h1>
                                     <h2>The leaders in Environmental Health and Safety (EHS) training, consulting and auditing.</h2>
                                 </div>
@@ -88,17 +87,6 @@
                                     <img class="logo" src="img/partners/partner-1.png" alt="First slide">
                                     <img class="logo" src="img/partners/partner-2.png" alt="First slide">
                                 </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item top">
-                        <img src="img/fr.jpg" alt="Responsive image">
-                        <div class="section">
-                            <div class="container">
-                                <div class="text">
-                                    <h1>Training<br>Consultancy<br>Audit</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis ligula nec mauris auctor, nec sollicitudin libero faucibus. Pellentesque velit eros, dictum in fringilla nec, facilisis ut dui. Nulla lorem lacus, vulputate at placerat vel, posuere a ligula. Phasellus bibendum ex orci, ac dictum sapien interdum vitae. Nulla blandit ac mi eu tincidunt. Aliquam erat volutpat. Fusce at augue sed eros interdum cursus. Donec felis dui, fringilla vitae magna sit amet, dictum euismod neque. Duis ultricies erat luctus ultrices elementum. Curabitur sapien lorem, aliquam a auctor at, consequat vitae risus. Aliquam sagittis tincidunt lorem et luctus.</p>
                                 </div>
                             </div>
                         </div>
@@ -287,6 +275,6 @@
                 <div class="spacer"></div>
             </div>
         </div>
-        <div id="footer"></div>
+        <div id="placeholder-footer"></div>
     </body>
 </html>

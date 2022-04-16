@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
  
-        <title>SICHER</title>
+        <title>About | SICHER</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
@@ -18,67 +18,44 @@
         <script src="lib/bootstrap/js/bootstrap.min.js"></script>
         <script>
             $(function() {
-                $("#header").load("nav.html");
+                $("#placeholder-header").load("template/nav.html");
+                $("#placeholder-footer").load("template/footer.html");
             });
         </script>
-
-        <!-- FOR DEBUGGING ONLY -->
+        <script src="scripts/slow-scroll.js"></script>
     
     </head>
     <body>
-        <div id="header"></div>
-        <script>
-            $(document).ready(function(){
-                function reveal() {
-                    var reveals = document.querySelectorAll(".animation-up");
-                    for (var i = 0; i < reveals.length; i++) {
-                        var windowHeight = window.innerHeight;
-                        var elementTop = reveals[i].getBoundingClientRect().top;
-                        var elementVisible = 0;
-                        if (elementTop < windowHeight - elementVisible) {
-                            reveals[i].classList.add("c-animation-up");
-                        } else {
-                            reveals[i].classList.remove("c-animation-up");
-                        }
-                    }
-                }
-                window.addEventListener("scroll", reveal);
-
-                // To check the scroll position on page load
-                reveal();
-
-                $("#carousel-next-page").click(function () {
-                    $('html, body').animate({
-                        scrollTop: screen.height - 110 
-                    }, 800, function(){});
-                });
-            });
-
-        </script>
-        <div class="section" id="footer">
-            <div class="container">
-                <div class="mini-spacer"></div>
-                <div class="row">
-                    <div class="col">
-                        <h1>Contact Us</h1>
-                        <h2>contactus@sicherthai.com</h2>
-                        <h2>+(66) 2351 0246</h2>
-                        <h2>+(66) 829 599 593</h2>
-                        <br>
-                        <p>Sicher Company Limited<br>
-                            57 Witthayu Rd, Lumphini, Pathum Wan District,<br>Bangkok 10330, 18th floor</p>
-                            <br>
-                            <p>Copyright © Sicher Co., Ltd. 2022<br>
-                                Made by Chaidhat Chaimongkol</p>
-                    </div>
-                    <div class="col">
-                        <h1>Follow Us</h1>
-                        <button class="email" onclick="window.location.href='mailto:contactus@sicherthai.com'">
-                        <button class="facebook" onclick="window.location.href='https://'">
-                        <button class="linkedin" onclick="window.location.href='https://'">
+        <div id="placeholder-header"></div>
+        <div class="top splash">
+            <div class="section">
+                <img src="img/fr2.jpg" alt="Responsive image">
+                <div class="section">
+                    <div class="container">
+                        <div class="text slow-scroll">
+                            <h1>About Us</h1>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="section">
+            <div class="container">
+                <div class="mini-spacer"></div>
+                <h2>The leaders in Environmental Health and Safety (EHS) training, consulting and auditing.</h2>
+                <div class="mini-spacer"></div>
+                <h1><b>We are SICHER.</b></h1>
+                Sicher is a Thailand-based company with a 30-year history of driving change in the Environment, Health, and Safety (EHS). We know the business terrain and use our global network to deliver customized solutions with powerful results.
+                <br>
+                <br>
+                <h1><b>Our Services</b></h1>
+                We partner with businesses, universities, and governments to support customers at every level: Process Safe Management, Energy use, Maintenance & Inspections, Construction Safety Management Consulting; digitally-optimized and trackable on-site services. We help our customers prevent occupational injuries to all employees and workers and transform the facility into high-performing and high-value.
+                <br>
+                <br>
+                We have partnered with some of the world’s most innovative companies to deliver a platform that accelerates opportunities for people and business, making their factories smart, connected, and responsive to the long-term trends that are reshaping its Sustainable Development.
+                <div class="spacer"></div>
+            </div>
+        </div>
+        <div id="placeholder-footer"></div>
     </body>
 </html>
