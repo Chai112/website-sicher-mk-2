@@ -55,6 +55,7 @@
 }
 .tile p {
     padding-top: 2em;
+    font-size: 12pt;
 }
 .tile:hover h2,
 .tile:focus h2 {

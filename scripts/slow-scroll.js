@@ -4,6 +4,10 @@ $(document).ready(function(){
             "margin-top",
             (window.scrollY * 0.05) + "vh"
         );
+        $(".slow-scroll-2").css(
+            "margin-top",
+            (window.scrollY * 0.02) + "vh"
+        );
     }
     window.addEventListener("scroll", reveal);
 

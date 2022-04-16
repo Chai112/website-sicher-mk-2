@@ -8,7 +8,7 @@ $(document).ready(function(){
     var forceAtTop = false;
     function checkShowTop () {
         var currentScrollPos = window.pageYOffset;
-        if (currentScrollPos < 700) {
+        if (currentScrollPos < screen.height - 110) {
             document.getElementById("navbar").classList.add("at-top");
             document.getElementById("navbar").classList.remove("shadow");
         } else {
@@ -20,7 +20,6 @@ $(document).ready(function(){
     }
     $("#navcover-section").css("display", "none");
     $("#services").click(function() {
-        console.log("a");
         if (!showingNavcover) {
             $("#services").addClass("force-on");
             $("#main-navigation").removeClass("show");
@@ -94,6 +93,12 @@ $(document).ready(function(){
             hasElementOnNavCoverBeenClicked = true;
             $("#navcover-col-1").addClass("col-2-shown");
 
+            // if has no children,
+            // jump to href
+            if (navdata.items[i].items.length == 0) {
+                window.location.href = navdata.items[i].link;
+            }
+
             // handle force-on class on all first rows
             for (let j = 0; j < navdata.items.length; j++) {
                 var name = navdata.items[j].name;
@@ -113,9 +118,9 @@ $(document).ready(function(){
 
             // show second column
             $("#navcover-col-2").html("");
-            for (var j = 0; j < navdata.items[i].items.length; j++) {
+            for (let j = 0; j < navdata.items[i].items.length; j++) {
                 var name = navdata.items[i].items[j].name;
-                var idName = `navcover-item-col-2-${j}`;
+                let idName = `navcover-item-col-2-${j}`;
                 $("#navcover-col-2").append(
                     `<div class="navcover-item" id="${idName}">` +
                         '<div class="row">' +
@@ -125,15 +130,21 @@ $(document).ready(function(){
                     '</div>'
                 );
 
+                $(`#${idName}`).css("opacity", "0%");
+                setTimeout(
+                function() 
+                {
+                    $(`#${idName}`).css("opacity", "100%");
+                }, 10);
+
                 // handle second column click
                 $(`#${idName}`).click( function () {
                     hasElementOnNavCoverBeenClicked = true;
+                    // jump to href
+                    window.location.href = navdata.items[i].items[j].link;
                 });
             }
         });
-    }
-    function removeAllFirstRow() {
-
     }
 });
 
@@ -143,13 +154,15 @@ const navdata =
         {
             "name": "Process Safety Management",
             "items": [
-                {"name": "Process Safety Training", "link": "psm/a"},
-                {"name": "Process Safety Consulting", "link": "psm/c"},
-                {"name": "Process Safety Auditing", "link": "psm/b"},
+                {"name": "Overview", "link": "psm.html"},
+                {"name": "Process Safety Training", "link": "psm.html"},
+                {"name": "Process Safety Consulting", "link": "psm.html"},
+                {"name": "Process Safety Auditing", "link": "psm.html"},
             ]
         },
         {
             "name": "Construction Safety Management Consulting",
+            "link": "about.html",
             "items": [
             ]
         },

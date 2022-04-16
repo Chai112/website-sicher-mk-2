@@ -105,11 +105,17 @@
 .top.splash .text {
     right: 50%;
     transform: translateX(50%);
+    text-align: center;
 }
 .top.splash h1 {
     padding-left: 0;
 }
 
+.top.splash img {
+    filter: grayscale(100%);
+    background-color: #903331;
+    opacity: 50%;
+}
 
 
 

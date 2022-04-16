@@ -9,7 +9,7 @@
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(0,0,0, .8);
+    background-color: rgba(0,0,0, .5);
     transition: all 500ms ease;
     opacity: 0%;
 }
@@ -39,6 +39,7 @@
     margin-left: 16px;
     padding-left: 32px;
     transition: all 200ms ease;
+    cursor: pointer;
 }
 .navcover .navcover-item:hover,
 .navcover .navcover-item.force-on {

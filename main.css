@@ -39,6 +39,15 @@ h3 {
     margin-bottom: 32px;
     font-weight: bold;
 }
+h4 {
+    color: grey;
+    text-align: justify;
+}
+p {
+    font-size: 14pt;
+    margin-bottom: 32px;
+    text-align: justify;
+}
 
 .spacer {
     height: 100px;
