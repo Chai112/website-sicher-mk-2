@@ -14,6 +14,31 @@
 #footer {
     background: #903331;
     color: #fff;
-    margin: 0;
-    padding-bottom: 5em;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-top: 5em;
+    padding-bottom: 10em;
+}
+#footer h1 {
+    border-left-color: #fff;
+}
+#footer h2 {
+    color: #fff;
+    text-align: left;
+}
+#footer button {
+    width: 60px;
+    height: 60px;
+    border: transparent;
+    background-size: 60px;
+    margin-right: 30px;
+}
+#footer button.email{
+    background-image: url("img/contact/email.png");
+}
+#footer button.facebook {
+    background-image: url("img/contact/facebook.png");
+}
+#footer button.linkedin {
+    background-image: url("img/contact/linkedin.png");
 }

@@ -76,6 +76,7 @@
     color: white;
     opacity: 100%;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 /* all .tile children of .custom-class2 will have this*/

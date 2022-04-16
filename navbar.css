@@ -5,7 +5,10 @@
 }
 .section.navbar {
     padding-top: 0;
-    background-color: #fff;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, .9);
 }
 
 .navbar {
@@ -18,11 +21,21 @@
 .navbar.at-top {
     background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
     background-color: #00000000;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
 }
 .navbar.at-top .navbar-brand,
 .navbar.at-top .navbar-collapse .navbar-nav .nav-item .nav-link
 {
     color: #fff;
+}
+.navbar.at-top .nav-link,
+.navbar.at-top .navbar-brand img {
+    height: 90px;
+}
+.navbar.at-top .nav-link {
+    line-height: 90px;
+    height: 90px;
 }
 
 .nav-link,
@@ -33,15 +46,17 @@
     padding-left: 2em !important;
     padding-right: 2em !important;
     line-height: 1.5cm;
-    height: 2cm;
+    height: 45px;
+    transition: .2s ease;
 }
 .nav-link {
     padding-left: 2em !important;
     padding-right: 2em !important;
-    line-height: 1.5cm;
-    height: 2cm;
+    line-height: 30px;
+    height: 45px;
 }
-.nav-link:hover {
+.nav-link:hover, 
+.nav-link.force-on {
     color: #fff;
     opacity: 100;
     transition: .2s ease;
@@ -52,4 +67,8 @@
 }
 .navbar-toggler-icon {
     color: #000;
+}
+
+#lang {
+    font-family:'IBM Plex Sans Thai';
 }

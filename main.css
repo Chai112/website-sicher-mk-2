@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'century';
+    src: url('font/century.ttf');
+}
+html, body {
+    overflow-x: hidden;
+}
 body {
     padding: 0;
     margin: 0;
@@ -9,13 +16,13 @@ body {
     padding: 8px;
 }
 h1 {
-    font-weight: bolder;
     border-left-color: #903331;
     border-left-width: 8px;
     border-left-style: solid;
     padding-left:16px;
     margin-bottom: 16px;
     line-height: 45pt;
+    font-weight: bold;
 }
 h2 {
     margin-bottom: 16px;
@@ -44,4 +51,5 @@ h3 {
     margin-left: 10%;
     margin-right: 10%;
 }
+
 

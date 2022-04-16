@@ -9,11 +9,20 @@
     width: 100%;
     object-fit: cover;
 }
+.top.carousel-item .logo {
+    position: relative;
+    height: 5em;
+    width: auto;
+    padding-right: 3em;
+}
 .top.carousel-item .section {
+    margin: 0;
     padding: 0;
-    padding-top: 300px;
 }
 .top.carousel-item .text {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     position: absolute;
 }
 .top.carousel-item .text * {
@@ -27,11 +36,16 @@
     font-size: 70pt;
     line-height: 72pt;
 }
+.top.carousel-item .text h1 b {
+    font-family: "century";
+    font-weight: normal;
+}
 .top.carousel-item .text h2 {
     margin-left: 1em;
 
     font-size: 20pt;
     max-width: 1100px;
+    text-align: left;
 }
 .top.carousel-item .text p {
     margin-left: 1em;
@@ -51,11 +65,14 @@
     }
     .top.carousel-item .text h1 {
         font-size: 40pt;
+        margin-left: 0;
         line-height: 40pt;
     }
     .top.carousel-item .text h2 {
         margin-top: 2em;
+        margin-left: 0;
         font-size: 16pt;
+        text-align: center;
     }
     .top.carousel-item .text p {
         margin-top: 2em;
@@ -63,6 +80,10 @@
     }
     .top.carousel-item {
         height: 100vh;
+    }
+    .top.carousel-item .logo {
+        margin: auto;
+        padding: 0;
     }
 }
 
@@ -75,4 +96,64 @@
         opacity: 100%;
         transform: translateX(0);
     }
+}
+
+
+
+
+
+
+
+.client.carousel {
+    margin-left: -8em;
+    margin-right: -8em;
+}
+.client.carousel-inner {
+    height: 12em;
+    padding-left: 8em;
+    padding-right: 8em;
+}
+.client.carousel-item .inner {
+    margin: auto;
+    padding: auto;
+}
+.client.carousel-item img {
+    height:10em;
+    width: auto;
+    padding: 1em;
+}
+.client.carousel li {
+    background-color: black;
+}
+.client.carousel .carousel-control-next-icon {
+    background-color: black;
+}
+.client.carousel .carousel-control-prev-icon {
+    background-color: black;
+}
+#a-1 {
+    padding-left: 5em;
+}
+#a-2 {
+    padding-left: 3em;
+}
+
+.carousel-next-page {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: block;
+    margin: auto;
+    margin-top: -200px;
+    margin-bottom: 150px;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all 200ms;
+}
+.carousel-next-page:hover {
+    height: 55px;
+    width: 55px;
+    border-width: 0 6px 6px 0;
 }
