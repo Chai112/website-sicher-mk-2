@@ -8,7 +8,7 @@ $(document).ready(function(){
     var forceAtTop = false;
     function checkShowTop () {
         var currentScrollPos = window.pageYOffset;
-        if (currentScrollPos < screen.height - 110) {
+        if (currentScrollPos < (screen.height / 2) - 110) {
             document.getElementById("navbar").classList.add("at-top");
             document.getElementById("navbar").classList.remove("shadow");
         } else {
@@ -182,6 +182,7 @@ const navdata =
         },
         {
             "name": "Behaviour Based Safety",
+            "link": "template.html",
             "items": [
             ]
         },

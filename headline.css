@@ -1,0 +1,14 @@
+.headline img {
+    max-width: 800px;
+    z-index: 10;
+    display: inline;
+}
+.headline .tile {
+    display: inline;
+    position: absolute;
+    width: 500px;
+    margin-left: -400px;
+    margin-top: 32px;
+    z-index: 20;
+    padding: 32px;
+}

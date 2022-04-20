@@ -37,8 +37,10 @@
     line-height: 72pt;
 }
 .top .text h1 b {
+    /*
     font-family: "century";
-    font-weight: normal;
+    */
+    font-weight:bolder;
 }
 .top .text h2 {
     margin-left: 1em;
@@ -102,13 +104,8 @@
     height: 50vh;
     z-index: -500;
 }
-.top.splash .text {
-    right: 50%;
-    transform: translateX(50%);
-    text-align: center;
-}
 .top.splash h1 {
-    padding-left: 0;
+    font-size: 40pt;
 }
 
 .top.splash img {

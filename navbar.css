@@ -48,6 +48,7 @@
     line-height: 1.5cm;
     height: 45px;
     transition: .2s ease;
+    width: auto;
 }
 .nav-link {
     padding-left: 2em !important;

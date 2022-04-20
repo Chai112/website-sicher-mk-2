@@ -23,7 +23,7 @@ h1 {
     border-left-width: 8px;
     border-left-style: solid;
     padding-left:16px;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
     line-height: 45pt;
     font-weight: bold;
 }
@@ -42,10 +42,11 @@ h3 {
 h4 {
     color: grey;
     text-align: justify;
+    margin-bottom: 64px;
 }
 p {
     font-size: 14pt;
-    margin-bottom: 32px;
+    margin-bottom: 64px;
     text-align: justify;
 }
 
@@ -64,4 +65,6 @@ p {
     margin-right: 10%;
 }
 
-
+img {
+    width: 100%;
+}

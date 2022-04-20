@@ -10,8 +10,8 @@
     max-width: 1200px;
     padding: 0cm;
 }
-.section .container.squeezed {
-    max-width: 800px;
+.section .container .row {
+    margin: 0;
 }
 
 #footer {

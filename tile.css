@@ -47,7 +47,7 @@
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 400ms;
-    padding-bottom: 8px;
+    padding-bottom: 16px;
     text-overflow: ellipsis;
     font-weight: bold;
     color: black;
@@ -56,6 +56,7 @@
 .tile p {
     padding-top: 2em;
     font-size: 12pt;
+    text-align: left;
 }
 .tile:hover h2,
 .tile:focus h2 {
