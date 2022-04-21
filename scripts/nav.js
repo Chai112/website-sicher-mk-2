@@ -162,36 +162,37 @@ const navdata =
         },
         {
             "name": "Construction Safety Management Consulting",
-            "link": "about.html",
+            "link": "csmc.html",
             "items": [
             ]
         },
         {
             "name": "EHS Software and Technological Solutions",
+            "link": "ehss.html",
             "items": [
             ]
         },
         {
             "name": "Energy Management",
             "items": [
-                {"name": "Solar Panels", "link": "psm/a"},
-                {"name": "Energy Storage", "link": "psm/a"},
-                {"name": "EV Charging", "link": "psm/a"},
-                {"name": "Wind Turbines", "link": "psm/a"},
+                {"name": "Solar Panels", "link": "em.html"},
+                {"name": "Energy Storage", "link": "em.html"},
+                {"name": "EV Charging", "link": "em.html"},
+                {"name": "Wind Turbines", "link": "em.html"},
             ]
         },
         {
             "name": "Behaviour Based Safety",
-            "link": "template.html",
+            "link": "bbs.html",
             "items": [
             ]
         },
         {
             "name": "Maintenance and Inspection",
             "items": [
-                {"name": "Training", "link": "psm/a"},
-                {"name": "Non-Destructive Testing", "link": "psm/a"},
-                {"name": "Mechanical, Electrical and Plumbing (MEP)", "link": "psm/a"},
+                {"name": "Training", "link": "mis.html"},
+                {"name": "Non-Destructive Testing", "link": "mis.html"},
+                {"name": "Mechanical, Electrical and Plumbing (MEP)", "link": "mis.html"},
             ]
         },
     ]

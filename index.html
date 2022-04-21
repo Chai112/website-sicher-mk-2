@@ -55,6 +55,24 @@
                         scrollTop: screen.height - 110 
                     }, 800, function(){});
                 });
+                $("#tile-psm").click(function () {
+                    window.location.href = "psm.html";
+                });
+                $("#tile-csmc").click(function () {
+                    window.location.href = "csmc.html";
+                });
+                $("#tile-ehss").click(function () {
+                    window.location.href = "ehss.html";
+                });
+                $("#tile-em").click(function () {
+                    window.location.href = "em.html";
+                });
+                $("#tile-bbs").click(function () {
+                    window.location.href = "bbs.html";
+                });
+                $("#tile-mis").click(function () {
+                    window.location.href = "mis.html";
+                });
             });
 
         </script>
@@ -108,7 +126,7 @@
                 <div class="spacer"></div>
                 <div class="row">
                     <div class="col">
-                        <div class="tile shadow animation-up">
+                        <div class="tile shadow animation-up" id="tile-psm">
                             <img src="img/psm.jpg">
                             <div class="tile-container">
                                 <h2>Process Safety Management</h2>
@@ -119,7 +137,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="tile shadow animation-up">
+                        <div class="tile shadow animation-up" id="tile-csmc">
                             <img src="img/osha.jpg">
                             <div class="tile-container">
                                 <h2>Construction Safety Management Consulting</h2>
@@ -130,18 +148,19 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="tile shadow animation-up">
+                        <div class="tile shadow animation-up" id="tile-ehss">
                             <img src="img/er.jpg">
                             <div class="tile-container">
                                 <h2>EHS Software and<br>Technological Solutions</h2>
-                                <p>TBD</p>
+                                <p>Incorporated with Intelex in Toronto, we fufill your organization’s requirements with a comprehensive EHS Software solution that addresses all aspects of and
+                                risk management system.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="tile shadow animation-up">
+                        <div class="tile shadow animation-up" id="tile-em">
                             <img src="img/hazmat.jpg">
                             <div class="tile-container">
                                 <h2>Energy Management</h2>
@@ -152,7 +171,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="tile shadow animation-up">
+                        <div class="tile shadow animation-up" id="tile-bbs">
                             <img src="img/ds.jpg">
                             <div class="tile-container">
                                 <h2>Behaviour Based Safety</h2>
@@ -163,7 +182,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="tile shadow animation-up">
+                        <div class="tile shadow animation-up" id="tile-mis">
                             <img src="img/cs.jpg">
                             <div class="tile-container">
                                 <h2>Maintenance and<br>Inspection</h2>
