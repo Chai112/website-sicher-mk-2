@@ -5,7 +5,8 @@
 <html lang="en">
     <head>
  
-    <title>SICHER</title>
+        <title>SICHER</title>
+        <link rel="icon" type="image/jpg" href="favicon.jpg">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
@@ -72,6 +73,18 @@
                 });
                 $("#tile-mis").click(function () {
                     window.location.href = "mis.html";
+                });
+                $("#news-1").click(function () {
+                    window.location.href = "news-1.html";
+                });
+                $("#news-2").click(function () {
+                    window.location.href = "news-2.html";
+                });
+                $("#news-3").click(function () {
+                    window.location.href = "news-3.html";
+                });
+                $("#news-4").click(function () {
+                    window.location.href = "news-4.html";
                 });
             });
 
@@ -203,24 +216,24 @@
                 <div class="mini-spacer"></div>
                 <div class="row">
                     <div class="col">
-                        <div class="tile news-tile shadow animation-up">
+                        <div class="tile news-tile shadow animation-up" id="news-1">
                             <h2>Expanding our Footprint with New Engineering and Maintenance Services</h2>
                             <p>Western Digital Storage Technologies (Thailand) Limited, a global leader in manufacturing...</p>
                             <p><b>READ MORE</b></p>
                         </div>
-                        <div class="tile news-tile shadow animation-up">
+                        <div class="tile news-tile shadow animation-up" id="news-2">
                             <h2>Sicher Trusted by The Industrial Estate Authority of Thailand (IEAT)</h2>
                             <p>Process safety management (PSM) is a disciplined framework for managing the integrity of operating systems ...</p>
                             <p><b>READ MORE</b></p>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="tile news-tile shadow animation-up">
+                        <div class="tile news-tile shadow animation-up" id="news-3">
                             <h2>Sicher Wins Contract from Charoen Pokphand (CP) Group</h2>
                             <p>Sicher succeeded to secure the global contract to develop the Global Incident Investigation tool ...</p>
                             <p><b>READ MORE</b></p>
                         </div>
-                        <div class="tile news-tile shadow animation-up">
+                        <div class="tile news-tile shadow animation-up" id="news-4">
                             <h2>Developing Electronic Incident and EHS Audit Reporting for Thailand</h2>
                             <p>Sicher was awarded from the Department of Industrial Work, under the Ministry of Factory to develop...</p>
                             <p><b>READ MORE</b></p>
