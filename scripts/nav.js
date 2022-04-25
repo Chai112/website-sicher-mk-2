@@ -181,12 +181,14 @@ const navdata =
                 {"name": "Wind Turbines", "link": "em.html"},
             ]
         },
+        /*
         {
             "name": "Behaviour Based Safety",
             "link": "bbs.html",
             "items": [
             ]
         },
+        */
         {
             "name": "Maintenance and Inspection",
             "items": [
