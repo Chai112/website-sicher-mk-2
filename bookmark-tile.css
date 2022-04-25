@@ -1,0 +1,33 @@
+
+.bookmark-tile {
+    padding: 20px;
+    position: sticky;
+    height: auto;
+}
+.bookmark-tile p {
+    margin: 0;
+    padding: 0;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 14pt;
+    border-bottom: solid #dddddd 1px;
+    transition: all 200ms;
+}
+
+.bookmark-tile p:hover {
+    background-color: #903331;
+    color: white;
+}
+
+.bookmark-tile h2 {
+    margin: 0;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.bookmark-tile:hover h2 {
+    color: black;
+    margin: 0;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
