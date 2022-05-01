@@ -11,10 +11,12 @@ $(document).ready(function(){
         if (currentScrollPos < (screen.height / 2) - 110) {
             document.getElementById("navbar").classList.add("at-top");
             document.getElementById("navbar").classList.remove("shadow");
+            $("body").css("background-color", "#903331");
         } else {
             if (!forceAtTop) {
                 document.getElementById("navbar").classList.remove("at-top");
                 document.getElementById("navbar").classList.add("shadow");
+                $("body").css("background-color", "white");
             }
         }
     }
@@ -36,6 +38,7 @@ $(document).ready(function(){
             });
             document.getElementById("navbar").classList.add("at-top");
             document.getElementById("navbar").classList.remove("shadow");
+            $("body").css("background-color", "#903331");
             forceAtTop = true; 
             showingNavcover = true;
         } else {

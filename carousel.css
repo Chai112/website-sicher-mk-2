@@ -57,48 +57,6 @@
     max-width: 900px;
 }
 
-@media (max-width: 900px) {
-    .top .section .container {
-        padding: 0;
-    }
-    .top .text {
-        width: 100%;
-        text-align: center;
-    }
-    .top .text h1 {
-        font-size: 40pt;
-        margin-left: 0;
-        line-height: 40pt;
-    }
-    .top .text h2 {
-        margin-top: 2em;
-        margin-left: 0;
-        font-size: 16pt;
-        text-align: center;
-    }
-    .top .text p {
-        margin-top: 2em;
-        font-size: 12pt;
-    }
-    .top {
-        height: 100vh;
-    }
-    .top .logo {
-        margin: auto;
-        padding: 0;
-    }
-}
-
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-10%);
-        opacity: 0%;
-    }
-    100% {
-        opacity: 100%;
-        transform: translateX(0);
-    }
-}
 
 .top.splash {
     height: 50vh;
@@ -167,7 +125,67 @@
     transition: all 200ms;
 }
 .carousel-next-page:hover {
-    height: 55px;
-    width: 55px;
     border-width: 0 6px 6px 0;
+}
+
+@media (max-width: 900px) {
+    .top .section .container {
+        padding: 0;
+    }
+    .top .text {
+        width: 100%;
+        text-align: center;
+    }
+    .top .text h1 {
+        font-size: 40pt;
+        margin-left: 0;
+        padding-left: 0;
+        line-height: 40pt;
+    }
+    .top .text h2 {
+        margin-top: 2em;
+        margin-left: 16px;
+        margin-right: 16px;
+        font-size: 14pt;
+        text-align: center;
+    }
+    .top .text p {
+        margin-top: 2em;
+        font-size: 12pt;
+    }
+    .top {
+        height: 100vh;
+    }
+    .top .spacer {
+        height: 10px;
+    }
+    .top .logo {
+        margin: auto;
+        padding: 0;
+        height: 3em;
+        display: block;
+    }
+
+    .carousel-next-page {
+        margin-top: -150px;
+        width: 20px;
+        height: 20px;
+    }
+    .carousel-control-next-icon {
+        opacity: 0%;
+    }
+    .carousel-control-prev-icon {
+        opacity: 0%;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+        transform: translateX(0);
+    }
 }

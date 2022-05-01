@@ -12,7 +12,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Helvetica";
-    background: #903331;
+    background-color: #000;
+    transition: background-color 1000ms;
 }
 .container {
     margin: 8px;

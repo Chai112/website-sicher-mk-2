@@ -73,3 +73,10 @@
 #lang {
     font-family:'IBM Plex Sans Thai';
 }
+
+@media (max-width: 900px) {
+    .navbar.at-top .nav-link,
+    .navbar.at-top .navbar-brand img {
+        height: 70px;
+    }
+}
