@@ -10,12 +10,12 @@ $(document).ready(function(){
         var currentScrollPos = window.pageYOffset;
         if (currentScrollPos < (screen.height / 2) - 110) {
             document.getElementById("navbar").classList.add("at-top");
-            document.getElementById("navbar").classList.remove("shadow");
-            $("body").css("background-color", "#903331");
+            document.getElementById("navbar").classList.remove("shadow-sm");
+            $("body").css("background-color", "#A33035");
         } else {
             if (!forceAtTop) {
                 document.getElementById("navbar").classList.remove("at-top");
-                document.getElementById("navbar").classList.add("shadow");
+                document.getElementById("navbar").classList.add("shadow-sm");
                 $("body").css("background-color", "white");
             }
         }
@@ -37,8 +37,8 @@ $(document).ready(function(){
                 height: '100%'
             });
             document.getElementById("navbar").classList.add("at-top");
-            document.getElementById("navbar").classList.remove("shadow");
-            $("body").css("background-color", "#903331");
+            document.getElementById("navbar").classList.remove("shadow-sm");
+            $("body").css("background-color", "#A33035");
             forceAtTop = true; 
             showingNavcover = true;
         } else {
@@ -115,7 +115,7 @@ $(document).ready(function(){
                     // no, remove force-on if there is already force-on
                     if ($(`#${idName}`).hasClass("force-on")) {
                         $(`#${idName}`).removeClass("force-on");
-                    }
+                    } 
                 }
             }
 

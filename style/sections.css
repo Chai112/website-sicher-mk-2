@@ -8,14 +8,14 @@
 .section .container {
     margin: auto;
     max-width: 1200px;
-    padding: 0cm;
+    padding: 3rem;
 }
 .section .container .row {
     margin: 0;
 }
 
 #footer {
-    background: #903331;
+    background: #A33035;
     color: #fff;
     padding-left: 16px;
     padding-right: 16px;
@@ -37,11 +37,11 @@
     margin-right: 30px;
 }
 #footer button.email{
-    background-image: url("img/contact/email.png");
+    background-image: url("/img/contact/email.png");
 }
 #footer button.facebook {
-    background-image: url("img/contact/facebook.png");
+    background-image: url("/img/contact/facebook.png");
 }
 #footer button.linkedin {
-    background-image: url("img/contact/linkedin.png");
+    background-image: url("/img/contact/linkedin.png");
 }
