@@ -7,9 +7,7 @@
     height: auto;
 }
 .news-tile h2 {
-    font-size: 18pt;
     margin-bottom: .5em;
-    color: black;
 }
 .news-tile:hover h2,
 .news-tile:focus h2 {

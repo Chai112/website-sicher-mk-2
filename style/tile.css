@@ -5,10 +5,6 @@
     display: block;
     background: #fff;
     margin: 1.5rem;
-    border-radius: 8px;
-    border-style: solid;
-    border-color: #e0e0e0;
-    border-width: 2px;
     min-width: 18rem;
     height: 24rem;
     overflow: hidden;
@@ -22,7 +18,6 @@
 }
 
 .tile img {
-    border-radius: 4px 4px 0 0;
     margin: 0;
     width: 100%;
     object-fit: cover;
@@ -31,7 +26,7 @@
     height: 100%;
 }
 .tile .tile-container {
-    padding: 30px;
+    padding: 2rem;
     position: relative;
     transition: all 0.4s;
     background: #fff;
@@ -54,8 +49,6 @@
     text-align: left;
 }
 .tile p {
-    margin-top: -1rem;
-    font-size: 12pt;
     text-align: left;
 }
 .tile:hover h2,
@@ -89,6 +82,14 @@
     background: #ff0000;
 }
 
+.search {
+    background: #fff;
+    height: 4rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    min-width: 30rem;
+}
+
 @keyframes kf-animation-up {
     0% {
         opacity: 0%;
@@ -101,7 +102,11 @@
 }
 @media (max-width: 900px) {
     .tile {
+        margin: 1.5rem 0 1.5rem 0;
         height: 20rem;
+    }
+    .tile h2 {
+        font-size: 16pt;
     }
     .tile:hover .tile-container,
     .tile:focus .tile-container

@@ -115,22 +115,23 @@ h1 {
     padding-left: 16px;
     margin-bottom: 32px;
     line-height: 35pt;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 24pt;
 }
 h2 {
-    font-weight: 200;
+    font-weight: 300;
     color: black;
     font-size: 30pt;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 h3 {
     font-weight: 300;
     color: gray;
     font-size: 20pt;
     text-align: center;
-    margin-bottom: 32px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 h4 {
     font-weight: 300;
@@ -139,8 +140,7 @@ h4 {
     margin-bottom: 64px;
 }
 p {
-    font-size: 12.5pt;
-    margin-bottom: 64px;
+    font-size: 13;
     text-align: justify;
 }
 
@@ -169,4 +169,19 @@ p {
 
 img {
     width: 100%;
+}
+
+@media (max-width: 900px) {
+    h1 {
+        font-size: 30pt;
+    }
+    h2 {
+        font-size: 25pt;
+    }
+    h3 {
+        font-size: 16pt;
+    }
+    p {
+        font-size: 11pt;
+    }
 }
