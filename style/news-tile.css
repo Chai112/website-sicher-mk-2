@@ -7,7 +7,8 @@
     height: auto;
 }
 .news-tile h2 {
-    margin-bottom: 0.5em;
+    font-size: 18pt;
+    margin-bottom: .5em;
     color: black;
 }
 .news-tile:hover h2,
@@ -15,7 +16,6 @@
     color: black;
 }
 .news-tile p {
-    color: grey;
     display: inline;
 }
 .news-tile p b {

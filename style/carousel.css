@@ -1,5 +1,5 @@
 .top {
-    height: 100vh;
+    height: 70vh;
     position: relative;
 }
 .top img {
@@ -154,7 +154,7 @@
         font-size: 12pt;
     }
     .top {
-        height: 100vh;
+        height: 50vh;
     }
     .top .spacer {
         height: 10px;

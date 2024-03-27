@@ -1,7 +1,7 @@
 .section.navbar .container {
     margin: auto;
-    max-width: 1200px;
-    padding: 0px;
+    max-width: 76rem;
+    padding: 0;
 }
 .section.navbar {
     padding-top: 0;
@@ -12,9 +12,11 @@
 
 .navbar {
     background:#fff;
-    padding: 0px;
+    padding: 0;
     transition: .2s ease;
     height: 5rem;
+    border-color: #d0d0d0;
+    border-width: 5px;
 }
 /* both have navbar and b class */
 .navbar.at-top {
@@ -23,14 +25,13 @@
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
 }
-.navbar.at-top .navbar-brand,
+.navbar.at-top .brand,
 .navbar.at-top .navbar-collapse .navbar-nav .nav-item .nav-link
 {
-    font-weight: bold;
     color: #fff;
 }
 .navbar.at-top .nav-link,
-.navbar.at-top .navbar-brand img {
+.navbar.at-top .brand img {
     height: 6rem;
 }
 .navbar.at-top .nav-link {
@@ -39,18 +40,17 @@
 }
 
 .nav-link,
-.navbar-brand img {
-    color: #000;
-    cursor: pointer;
-
+.navbar .brand img {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     padding-left: 2em !important;
     padding-right: 2em !important;
     line-height: 1.5cm;
     height: 4rem;
     transition: .2s ease;
-    width: auto;
 }
 .nav-link {
+    color: black;
     padding-left: 2em !important;
     padding-right: 2em !important;
     line-height: 30px;
@@ -58,9 +58,10 @@
 }
 .nav-link:hover, 
 .nav-link.force-on {
+    color: #A33035;
     opacity: 100;
     transition: .2s ease;
-    background-color: #00000040;
+    background-color: #A3303520;
     border-radius: 5px;
 }
 .navbar-collapse {
@@ -77,6 +78,6 @@
 @media (max-width: 900px) {
     .navbar.at-top .nav-link,
     .navbar.at-top .navbar-brand img {
-        height: 70px;
+        height: 5rem;
     }
 }

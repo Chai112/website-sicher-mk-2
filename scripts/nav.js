@@ -10,12 +10,12 @@ $(document).ready(function(){
         var currentScrollPos = window.pageYOffset;
         if (currentScrollPos < (screen.height / 2) - 110) {
             document.getElementById("navbar").classList.add("at-top");
-            document.getElementById("navbar").classList.remove("shadow-sm");
+            document.getElementById("navbar").classList.remove("shadow");
             $("body").css("background-color", "#A33035");
         } else {
             if (!forceAtTop) {
                 document.getElementById("navbar").classList.remove("at-top");
-                document.getElementById("navbar").classList.add("shadow-sm");
+                document.getElementById("navbar").classList.add("shadow");
                 $("body").css("background-color", "white");
             }
         }
@@ -37,7 +37,7 @@ $(document).ready(function(){
                 height: '100%'
             });
             document.getElementById("navbar").classList.add("at-top");
-            document.getElementById("navbar").classList.remove("shadow-sm");
+            document.getElementById("navbar").classList.remove("shadow");
             $("body").css("background-color", "#A33035");
             forceAtTop = true; 
             showingNavcover = true;

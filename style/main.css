@@ -3,49 +3,94 @@
     src: url('/font/century.ttf');
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-Black.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Black.ttf');
     font-weight: 900;
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-ExtraBold.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-ExtraBold.ttf');
     font-weight: 800;
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-Bold.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Bold.ttf');
     font-weight: 700;
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-SemiBold.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-SemiBold.ttf');
     font-weight: 600;
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-Medium.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Medium.ttf');
     font-weight: 500;
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-Regular.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Regular.ttf');
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-Light.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Light.ttf');
     font-weight: 300;
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-ExtraLight.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-ExtraLight.ttf');
     font-weight: 200;
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/font/Montserrat/Montserrat-Thin.ttf');
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Thin.ttf');
     font-weight: 100;
 }
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-Black.ttf');
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-ExtraBold.ttf');
+    font-weight: 800;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-Regular.ttf');
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-ExtraLight.ttf');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/font/PlayfairDisplay/PlayfairDisplay-Thin.ttf');
+    font-weight: 100;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -55,7 +100,7 @@ html, body {
 body {
     padding: 0;
     margin: 0;
-    font-family: "Montserrat";
+    font-family: "Inter";
     background-color: #000;
     transition: background-color 1000ms;
 }
@@ -67,25 +112,25 @@ h1 {
     border-left-color: #A33035;
     border-left-width: 8px;
     border-left-style: solid;
-    padding-left:16px;
+    padding-left: 16px;
     margin-bottom: 32px;
     line-height: 35pt;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 24pt;
 }
 h2 {
-    font-weight: 600;
-    margin-bottom: 16px;
-    font-size: 16pt;
-    color: grey;
+    font-weight: 200;
+    color: black;
+    font-size: 30pt;
     text-align: center;
+    margin-bottom: 3rem;
 }
 h3 {
     font-weight: 300;
-    font-size: 25pt;
+    color: gray;
+    font-size: 20pt;
     text-align: center;
     margin-bottom: 32px;
-    font-weight: bold;
 }
 h4 {
     font-weight: 300;
@@ -99,6 +144,14 @@ p {
     text-align: justify;
 }
 
+.brand img {
+    color: #000;
+    cursor: pointer;
+
+    height: 8rem;
+    margin-bottom: 4rem;
+    width: auto;
+}
 .spacer {
     height: 100px;
 }

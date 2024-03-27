@@ -1,13 +1,35 @@
 .section {
-    background-color: #fff;
+    background-color: #fafafa;
     padding-top: 2em;
     padding-left: 16px;
     padding-right: 16px;
     margin-bottom: 0;
 }
+.section.color-1 {
+    background-color: #ffffff;
+}
+.section.color-2 {
+    background-color: #fff9f9;
+
+    border: #A3303520;
+    border-width: 1px;
+    border-style: solid none solid none;
+}
+.section.color-3 {
+    background-color: #ffffff;
+}
+.section.color-3 h1 {
+    padding-left: 0;
+    border: none;
+    font-size: 40pt;
+}
+.section.color-3 p, .section.color-3 h2 {
+    text-align: left;
+}
+
 .section .container {
     margin: auto;
-    max-width: 1200px;
+    max-width: 80rem;
     padding: 3rem;
 }
 .section .container .row {
@@ -15,25 +37,26 @@
 }
 
 #footer {
-    background: #A33035;
-    color: #fff;
+
+    background-color: #fafafa;
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 5em;
     padding-bottom: 10em;
 }
 #footer h1 {
-    border-left-color: #fff;
+    border-left-color: #A33035;
 }
 #footer h2 {
-    color: #fff;
     text-align: left;
+    font-size: 20pt;
 }
 #footer button {
     width: 60px;
     height: 60px;
     border: transparent;
     background-size: 60px;
+    background-color: alpha;
     margin-right: 30px;
 }
 #footer button.email{
@@ -44,4 +67,11 @@
 }
 #footer button.linkedin {
     background-image: url("/img/contact/linkedin.png");
+}
+@media (max-width: 900px) {
+    .section .container {
+        margin: auto;
+        max-width: 80rem;
+        padding: 0rem;
+    }
 }
