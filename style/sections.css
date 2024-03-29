@@ -63,6 +63,7 @@
     .section .container {
         margin: auto;
         max-width: 80rem;
+        padding: 1rem;
     }
     .section.color-1 h1 {
         font-size: 30pt;
