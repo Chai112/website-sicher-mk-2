@@ -87,7 +87,7 @@
     height: 4rem;
     padding: 1rem;
     border-radius: 2rem;
-    min-width: 30rem;
+    max-width: 30rem;
 }
 
 @keyframes kf-animation-up {

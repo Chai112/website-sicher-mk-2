@@ -31,8 +31,6 @@
 }
 
 #footer {
-    padding-left: 16px;
-    padding-right: 16px;
     padding-top: 5em;
     padding-bottom: 10em;
 }
@@ -63,9 +61,9 @@
     .section .container {
         margin: auto;
         max-width: 80rem;
-        padding: 1rem;
+        padding: 1.5rem;
     }
     .section.color-1 h1 {
-        font-size: 30pt;
+        font-size: 24pt;
     }
 }

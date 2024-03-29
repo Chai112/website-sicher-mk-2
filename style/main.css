@@ -140,7 +140,7 @@ h4 {
     margin-bottom: 64px;
 }
 p {
-    font-size: 13;
+    font-size: 12pt;
     text-align: justify;
 }
 
@@ -176,12 +176,12 @@ img {
         font-size: 30pt;
     }
     h2 {
-        font-size: 25pt;
+        font-size: 24pt;
     }
     h3 {
         font-size: 16pt;
     }
     p {
-        font-size: 9pt;
+        font-size: 11pt;
     }
 }
