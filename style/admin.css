@@ -1,24 +1,95 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Black.ttf');
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-ExtraBold.ttf');
+    font-weight: 800;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Regular.ttf');
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-ExtraLight.ttf');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter/Inter-Thin.ttf');
+    font-weight: 100;
+}
+
+html {
+    background-color: #1b2439;
+    color: white;
+}
+body {
+    font-family: "Inter";
+    padding: 5rem
+}
 table {
     overflow: hidden;
     text-overflow: ellipsis; 
     white-space: nowrap;
+    border: solid #d0d0d0 1px;
+    border-collapse: collapse;
 }
-td {
-    width: 10rem
+th {
+    width: 10rem;
+    border: solid #d0d0d0 1px;
 }
-input {
+input, textarea {
+    margin-top: .5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color:#273453;
+    color: white;
+    border: none;
+
     margin-bottom: 2rem;
 }
-.big {
-    padding: 1rem;
+
+button, input[type=submit] {
+    padding: .5rem 2rem .5rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #112f73;
+    color: #5a8bff;
+    font-weight: bold;
+    border: none;
 }
-.style-1 {
-    background-color: #003ecf;
-    color: white;
+.big, input[type=submit].big {
+    padding: 1rem;
 }
 .box {
     margin-bottom: 1rem;
     padding: 1rem;
-    border: solid 1px;
+    border: solid #d0d0d0 1px;
+    border-radius: 4px;
     max-width: 50rem;
 }
