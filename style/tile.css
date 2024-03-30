@@ -4,6 +4,7 @@
 .tile {
     display: block;
     background: #fff;
+    background-color: #A33035;
     margin: 1.5rem;
     min-width: 18rem;
     height: 24rem;
@@ -18,6 +19,7 @@
 }
 
 .tile img {
+    opacity: 70%;
     margin: 0;
     width: 100%;
     object-fit: cover;

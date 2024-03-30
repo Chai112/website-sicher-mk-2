@@ -34,6 +34,9 @@
     padding-top: 5em;
     padding-bottom: 10em;
 }
+#footer.section .container .col {
+    min-width: 30rem;
+}
 #footer h2 {
     font-weight: 300;
     font-size: 16pt;

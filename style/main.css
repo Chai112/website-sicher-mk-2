@@ -116,7 +116,7 @@ h1 {
     margin-bottom: 32px;
     line-height: 35pt;
     font-weight: 300;
-    font-size: 24pt;
+    font-size: 26pt;
 }
 h2 {
     font-weight: 300;
@@ -173,13 +173,13 @@ img {
 
 @media (max-width: 900px) {
     h1 {
-        font-size: 30pt;
+        font-size: 22pt;
     }
     h2 {
         font-size: 24pt;
     }
     h3 {
-        font-size: 16pt;
+        font-size: 14pt;
     }
     p {
         font-size: 11pt;
