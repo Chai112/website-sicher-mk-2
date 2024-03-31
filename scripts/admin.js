@@ -48,18 +48,18 @@ async function getLectures() {
     var html = '';
     for (var i = 0; i < data.data.length; i++) {
         html += '<tr>' +
-                '<td>' + data.data[i].sicherLectureId + '</td>' + 
-                '<td>' + decodeURI(data.data[i].lectureName) + '</td>' + 
-                '<td>' + data.data[i].cost+ '</td>' +
-                '<td>' + decodeURI(data.data[i].dateHeld) + '</td>' +
-                '<td>' + decodeURI(data.data[i].venue) + '</td>' +
-                '<td>' + decodeURI(data.data[i].instructors) + '</td>' +
                 '<td><button onclick="' + 
                     `editLecture(${data.data[i].sicherLectureId});` +
                 '">Edit</button></td>' +
                 '<td><button onclick="' + 
                     `removeLecture(${data.data[i].sicherLectureId}, '${data.data[i].lectureName}');` +
                 '">Remove</button></td>' +
+                '<td>' + data.data[i].sicherLectureId + '</td>' + 
+                '<td>' + decodeURI(data.data[i].lectureName) + '</td>' + 
+                '<td>' + data.data[i].cost+ '</td>' +
+                '<td>' + decodeURI(data.data[i].dateHeld) + '</td>' +
+                '<td>' + decodeURI(data.data[i].venue) + '</td>' +
+                '<td>' + decodeURI(data.data[i].instructors) + '</td>' +
                 '</tr>';
     }
     $('#lectureTable tr').first().after(html);
@@ -130,12 +130,15 @@ function updateLectureFormData(lectureData) {
             <input type="text" id="lectureEditorForm_sectionName${i}" name="lectureEditorForm_sectionName${i}" value="${sectionName}"><br>
 
             <label for="lectureEditorForm_sectionDescription${i}">Section Data</label><br>
-            <textarea id="lectureEditorForm_sectionDescription${i}" name="lectureEditorForm_sectionDescription${i}" rows="10" cols="100">${sectionDescription}</textarea><br><br>
+            <textarea id="lectureEditorForm_sectionDescription${i}" name="lectureEditorForm_sectionDescription${i}" cols="70" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${sectionDescription}</textarea><br><br>
             <button type='button' onclick="addAboveLectureSection(${i})">Add above</button>
             <button type='button' onclick="addBelowLectureSection(${i})">Add below</button>
             <button type='button' onclick="removeLectureSection(${i})">Remove</button>
         </div>`;
         $('#lectureEditorForm_dataBox').append(html);
+        $(`#lectureEditorForm_sectionDescription${i}`).css("height", 
+            $(`#lectureEditorForm_sectionDescription${i}`).prop('scrollHeight') + "px"
+        );
     }
 }
 
