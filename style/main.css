@@ -171,7 +171,20 @@ img {
     width: 100%;
 }
 
+.mobile-only {
+    display: none;
+}
+.desktop-only {
+    display: auto;
+}
+
 @media (max-width: 900px) {
+    .mobile-only {
+        display: block;
+    }
+    .desktop-only {
+        display: none;
+    }
     h1 {
         font-size: 22pt;
     }

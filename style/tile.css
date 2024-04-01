@@ -87,9 +87,8 @@
 .search {
     background: #fff;
     height: 4rem;
-    padding: 1rem;
+    padding: 20px;
     border-radius: 2rem;
-    max-width: 30rem;
 }
 
 @keyframes kf-animation-up {
