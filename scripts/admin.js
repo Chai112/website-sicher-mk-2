@@ -1,4 +1,3 @@
-
 async function fetchServer(data) {
     const response = await fetch("https://server-singapore.scholarity.io/", {
         method: "POST", // or 'PUT'
@@ -42,11 +41,10 @@ async function changeLecture() {
 
 async function getLectures() {
     let data = await fetchServer({action: "sicher_getLectures"});
-    console.log(data.data)
 
     $('#lectureTable tr').not(':first').not(':last').remove();
     var html = '';
-    for (var i = 0; i < data.data.length; i++) {
+    for (var i = 0; i < 3; i++) {
         html += '<tr>' +
                 '<td><button onclick="' + 
                     `editLecture(${data.data[i].sicherLectureId});` +
