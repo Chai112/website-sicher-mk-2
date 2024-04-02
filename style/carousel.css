@@ -132,6 +132,9 @@
     height: 22rem;
     margin: auto;
 }
+#lecture-carousel-list {
+    margin-top: -1rem;
+}
 
 @media (max-width: 900px) {
     .top .section .container {
@@ -155,7 +158,7 @@
         text-align: center;
     }
     .top .text p {
-        margin-top: 2em;
+        margin-top: 2rem;
         font-size: 12pt;
     }
     .top {
