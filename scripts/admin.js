@@ -83,7 +83,7 @@ async function removeLecture (sicherLectureId, lectureName) {
 async function initLectureEditorForm() {
     let sicherLectureId = new URLSearchParams(window.location.search).get("sicherLectureId");
     let data = await fetchServer({action: "sicher_getLecture", sicherLectureId: sicherLectureId});
-    ``
+
     $("#lectureEditorForm_lectureName").val(decodeURI(data.data[0].lectureName))
     $("#lectureEditorForm_cost").val(data.data[0].cost)
     $("#lectureEditorForm_dateHeld").val(decodeURI(data.data[0].dateHeld))

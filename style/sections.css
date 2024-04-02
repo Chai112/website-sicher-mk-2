@@ -10,6 +10,7 @@
     padding-left: 0;
     border: none;
     font-size: 40pt;
+    margin-top: 0;
 }
 .section.color-1 p, .section.color-1 h3 {
     text-align: left;
@@ -32,7 +33,7 @@
 
 #footer {
     padding-top: 5em;
-    padding-bottom: 10em;
+    padding-bottom: 5em;
 }
 #footer.section .container .col {
     min-width: 30rem;
@@ -42,6 +43,10 @@
     font-size: 16pt;
     text-align: left;
     margin-bottom: 0;
+}
+#footer img {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 }
 #footer button {
     width: 60px;

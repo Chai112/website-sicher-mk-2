@@ -3,6 +3,7 @@
     padding: 20px;
     position: sticky;
     height: auto;
+    background-color: white;
 }
 .bookmark-tile p {
     margin: 0;
@@ -22,6 +23,7 @@
 
 .bookmark-tile h2 {
     margin: 0;
+    height: auto;
     margin-top: 12px;
     margin-bottom: 12px;
 }

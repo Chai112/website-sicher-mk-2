@@ -113,7 +113,8 @@ h1 {
     border-left-width: 8px;
     border-left-style: solid;
     padding-left: 16px;
-    margin-bottom: 32px;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
     line-height: 35pt;
     font-weight: 300;
     font-size: 26pt;
@@ -136,11 +137,10 @@ h3 {
 h4 {
     font-weight: 300;
     color: grey;
-    text-align: justify;
     margin-bottom: 64px;
 }
 p {
-    font-size: 11pt;
+    font-size: 12pt;
     text-align: justify;
 }
 
