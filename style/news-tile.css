@@ -1,21 +1,29 @@
 .news-tile {
     display: block;
     background: #fff;
-    padding: 30px;
+    padding: 2rem;
+    height: 19rem;
     max-width: 800px;
-    overflow: hidden;
-    height: 20rem;
 }
 .news-tile h2 {
     margin-bottom: .5em;
+    height: 6rem;
+    overflow: hidden;
 }
 .news-tile:hover h2,
 .news-tile:focus h2 {
     color: black;
 }
 .news-tile p {
-    display: inline;
+    height: 6rem;
+    overflow: hidden;
 }
 .news-tile p b {
+    word-wrap: break-word;
     color: #A33035;
+}
+@media (max-width: 900px) {
+    .news-tile h2 {
+        height: 4rem;
+    }
 }

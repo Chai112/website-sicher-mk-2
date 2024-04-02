@@ -44,7 +44,7 @@ async function getLectures() {
 
     $('#lectureTable tr').not(':first').not(':last').remove();
     var html = '';
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < data.data.length; i++) {
         html += '<tr>' +
                 '<td><button onclick="' + 
                     `editLecture(${data.data[i].sicherLectureId});` +
