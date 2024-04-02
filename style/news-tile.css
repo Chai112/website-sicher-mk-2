@@ -23,7 +23,10 @@
     color: #A33035;
 }
 @media (max-width: 900px) {
-    .news-tile, .news-tile h2, .news-tile p {
+    .news-tile h2, .news-tile p {
         height: auto;
+    }
+    .news-tile {
+        height: 16rem;
     }
 }
