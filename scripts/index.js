@@ -16,7 +16,7 @@ async function populateLectureList () {
         const html = `<div class="col">
             <div class="tile news-tile shadow animation-up" id="news-3">
                 <h2>${decodeURI(data.data[i].lectureName)}</h2>
-                <p>${decodeURI(data.data[i].data)}</p>
+                <p>${decodeURI(data.data[i].data)}...</p>
                 <p><b>READ MORE</b></p>
             </div>
         </div>`;
