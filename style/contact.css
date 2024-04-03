@@ -1,0 +1,107 @@
+.hidden {
+    display: none;
+}
+
+input[type=text], input[type=password], select, textarea {
+    font-family: "Inter";
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    font-size: 16;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 20rem;
+}
+
+select {
+    cursor: pointer;
+    background-color: transparent;
+    appearance: none;
+}
+
+.select-style {
+    max-width: 20rem;
+    position: relative;
+  }
+
+.select-style::before,
+.select-style::after {
+  --size: 0.3rem;
+  content: "";
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.select-style::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 30%;
+}
+
+.select-style::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 45%;
+}
+
+form {
+    margin: 0px; 
+    padding: 0px;
+}
+@keyframes shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(10px) }
+    50% { transform: translateX(-10px) }
+    75% { transform: translateX(10px) }
+    100% { transform: translateX(0) }
+  }
+
+form .error-text {
+    transition-delay: 0s;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #A33035;
+    font-size: 16;
+}
+form .shake {
+    animation: shake ease-in-out .4s;
+}
+textarea {
+    width: 100%;
+    max-width: 50rem;
+    height: 10rem;
+    display: block;
+    overflow: hidden;
+    resize: none;
+
+}
+a.button, button {
+    background-color:#A33035;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    border: none;
+
+    font-family: "Inter";
+    font-size: 16;
+    font-weight: 600;
+    display: inline;
+    letter-spacing: 0.5px;
+    transition: .2s ease;
+}
+a.button:hover, button:hover {
+    background-color:#D41C3A;
+}
+label {
+    font-size: 16pt;
+}

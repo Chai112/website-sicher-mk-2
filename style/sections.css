@@ -42,7 +42,7 @@
 }
 #footer h2 {
     font-weight: 300;
-    font-size: 16pt;
+    font-size: 18pt;
     text-align: left;
     margin-bottom: 0;
 }
@@ -76,5 +76,8 @@
     .section.color-1 h1 {
         font-size: 24pt;
         margin-bottom: 0;
+    }
+    #footer h2 {
+        font-size: 16pt;
     }
 }
