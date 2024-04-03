@@ -4,8 +4,7 @@
 
 input[type=text], input[type=password], select, textarea {
     font-family: "Inter";
-    background-color: white;
-    border-radius: 8px;
+    background-color:#fff;
     border: 1px solid #ccc;
     background-position: 10px 10px; 
     background-repeat: no-repeat;

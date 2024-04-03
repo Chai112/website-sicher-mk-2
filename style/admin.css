@@ -32,11 +32,11 @@ td {
 input, textarea {
     margin-top: .5rem;
     padding: 1rem;
-    border-radius: 8px;
-    background-color:#f8f8f8;
+    background-color:#fff;
     color: black;
     font-size: 10pt;
-    border: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 
     margin-bottom: 2rem;
 }
@@ -59,7 +59,7 @@ button, input[type=submit] {
 }
 .box {
     padding: 1rem;
-    border: solid grey 1px;
+    border: solid #d0d0d0 1px;
     border-radius: 4px;
     max-width: 50rem;
 }

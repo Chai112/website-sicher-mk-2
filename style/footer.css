@@ -1,0 +1,47 @@
+#footer {
+    background-color: #f0f0f0;
+    padding-bottom: 5em;
+}
+#footer .container, #footer.section {
+    padding-bottom: 0;
+}
+#footer.section .container .col {
+    margin-top: 2rem;
+    min-width: 30rem;
+}
+#footer h2 {
+    font-size: 14pt;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+#footer p {
+    margin-bottom: 3rem;
+}
+#footer img {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+#footer button {
+    width: 60px;
+    height: 60px;
+    border: transparent;
+    background-size: 60px;
+    background-color: alpha;
+    margin-right: 30px;
+}
+#footer button.email{
+    background-image: url("/img/contact/email.png");
+}
+#footer button.facebook {
+    background-image: url("/img/contact/facebook.png");
+}
+#footer button.linkedin {
+    background-image: url("/img/contact/linkedin.png");
+}
+
+@media (max-width: 900px) {
+    #footer h2 {
+        font-size: 16pt;
+    }
+}

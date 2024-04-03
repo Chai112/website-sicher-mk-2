@@ -85,13 +85,6 @@
     background: #ff0000;
 }
 
-.search {
-    background: #fff;
-    height: 4rem;
-    padding: 1.2rem;
-    border-radius: 2rem;
-}
-
 @keyframes kf-animation-up {
     0% {
         opacity: 0%;
