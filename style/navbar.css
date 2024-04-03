@@ -78,6 +78,27 @@
 #lang {
     font-family:'IBM Plex Sans Thai';
 }
+.fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #A33035;
+    width: 5rem;
+    height: 5rem;
+    align-items: center;
+    display: flex;
+    transition: .2s ease;
+    box-shadow: 0px 16px 32px -8px #00000060;
+}
+.fab:hover {
+    background-color:#D41C3A;
+    box-shadow: 0px 24px 32px -8px #A3303580;
+}
+.fab img {
+    margin: auto;
+    width: 2.5rem;
+    height: 2.5rem;
+}
 
 @media (max-width: 900px) {
     .navbar.at-top .nav-link,

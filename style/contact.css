@@ -87,7 +87,7 @@ a.button, button {
     background-color:#A33035;
     text-decoration: none;
     color: white;
-    padding: 1rem 2rem 1rem 2rem;
+    padding: .8rem 2rem .8rem 2rem;
     margin-right: 1rem;
     cursor: pointer;
     border: none;
@@ -104,4 +104,7 @@ a.button:hover, button:hover {
 }
 label {
     font-size: 16pt;
+}
+.fab {
+    display: none;
 }
