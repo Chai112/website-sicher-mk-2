@@ -170,18 +170,15 @@ const navdata =
             ]
         },
         {
-            "name": "EHS Software and Technological Solutions",
+            "name": "Software Engineering",
             "link": "ehss.html",
             "items": [
             ]
         },
         {
-            "name": "Energy Management",
+            "name": "Occupational Health and Safety",
+            "link": "ehss.html",
             "items": [
-                {"name": "Solar Panels", "link": "em.html"},
-                {"name": "Energy Storage", "link": "em.html"},
-                {"name": "EV Charging", "link": "em.html"},
-                {"name": "Wind Turbines", "link": "em.html"},
             ]
         },
         /*

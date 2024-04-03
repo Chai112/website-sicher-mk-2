@@ -47,6 +47,9 @@ async function getLectures() {
     for (var i = 0; i < data.data.length; i++) {
         html += '<tr>' +
                 '<td><button onclick="' + 
+                    `previewLecture(${data.data[i].sicherLectureId});` +
+                '">Preview</button></td>' +
+                '<td><button onclick="' + 
                     `editLecture(${data.data[i].sicherLectureId});` +
                 '">Edit</button></td>' +
                 '<td><button onclick="' + 
@@ -61,6 +64,11 @@ async function getLectures() {
                 '</tr>';
     }
     $('#lectureTable tr').first().after(html);
+}
+
+// linked with admin's preview lecture button
+async function previewLecture (sicherLectureId) {
+    window.location.href = `/lecture.html?id=${sicherLectureId}`;
 }
 
 // linked with admin's edit lecture button

@@ -65,12 +65,17 @@
 }
 .top.splash h1 {
     font-size: 40pt;
+    line-height: 40pt;
+    z-index: -500;
+    width: 80%;
 }
-
 .top.splash img {
     filter: grayscale(100%);
     background-color: #A33035;
     opacity: 50%;
+}
+.top.splash .section {
+    height: 0;
 }
 
 
@@ -174,6 +179,9 @@
         display: block;
     }
 
+    .top.splash h1 {
+        width: 100%;
+    }
     .carousel-next-page {
         margin-top: -150px;
         margin-bottom: 130px;

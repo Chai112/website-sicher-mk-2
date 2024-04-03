@@ -21,6 +21,9 @@
 .section.color-2 h2, .section.color-2 h3 {
     color: #800000;
 }
+.section.color-3 {
+    background-color: #ffffff;
+}
 
 .section .container {
     margin: auto;
@@ -32,7 +35,6 @@
 }
 
 #footer {
-    padding-top: 5em;
     padding-bottom: 5em;
 }
 #footer.section .container .col {
@@ -73,5 +75,6 @@
     }
     .section.color-1 h1 {
         font-size: 24pt;
+        margin-bottom: 0;
     }
 }
