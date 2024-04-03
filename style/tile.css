@@ -9,6 +9,7 @@
     min-width: 18rem;
     height: 24rem;
     overflow: hidden;
+    cursor: pointer;
 }
 .animation-up {
     opacity: 0%;
@@ -52,6 +53,7 @@
     height: 4.5rem;
 }
 .tile p {
+    white-space: normal;
     text-align: left;
 }
 .tile:hover h2,

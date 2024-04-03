@@ -140,6 +140,7 @@ h4 {
     margin-bottom: 64px;
 }
 p {
+    white-space: pre-wrap;
     font-size: 12pt;
     text-align: justify;
 }
@@ -193,8 +194,5 @@ img {
     }
     h3 {
         font-size: 14pt;
-    }
-    p {
-        font-size: 10pt;
     }
 }
