@@ -146,12 +146,12 @@
     </div>
     <div class="section color-1">
         <div class="container">
-            <div class="mobile-only search animation-up" id="news-3">
+            <div class="mobile-only search animation-up" onclick="window.location.href='/training.html'">
                 <span class="material-symbols-outlined">
                     search
                 </span>
                 <form>
-                    <input type="text" id="lectureEditorForm_lectureName" name="lectureName" class="shadow"><br>
+                    <input type="text" id="lectureEditorForm_lectureName" name="lectureName" class="shadow" disabled><br>
                 </form>
             </div>
             <br>
@@ -162,21 +162,23 @@
                         We offer the best Environmental Health and Safety training courses in Thailand.
                     </h3>
                 </div>
-                <div class="col desktop-only">
+                <div class="col desktop-only" onclick="window.location.href='/training.html'">
                     <div class="search animation-up" id="news-3">
                         <span class="material-symbols-outlined">
                             search
                         </span>
                         <form>
-                            <input type="text" id="lectureEditorForm_lectureName" name="lectureName" class="shadow"><br>
+                            <input type="text" id="lectureEditorForm_lectureName" name="lectureName" class="shadow" disabled><br>
                         </form>
                     </div>
+                    <br>
                 </div>
             </div>
         </div>
     </div>
     <div class="section color-2">
         <div class="container">
+            <h3>Popular courses we offer</h3>
             <div class="row desktop-only" id="lecture-list">
             </div>
             <div id="lecture-carousel" class="mobile-only client carousel slide" data-ride="carousel">
@@ -196,7 +198,10 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <h3>Popular courses we offer</h3>
+            <br>
+            <div class="text-center">
+                <button class="button" onclick="window.location.href='/training.html'">Find a Training Course</button>
+            </div>
         </div>
     </div>
     <div class="section">

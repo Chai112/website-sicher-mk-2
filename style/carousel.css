@@ -63,6 +63,12 @@
     height: 50vh;
     z-index: -500;
 }
+.top.splash.small {
+    height: 30vh;
+}
+.top.splash.small h1 {
+    text-align: center;
+}
 .top.splash h1 {
     font-size: 40pt;
     line-height: 40pt;

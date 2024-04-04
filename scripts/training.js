@@ -14,12 +14,12 @@ async function goToLecture(sicherLectureId) {
 }
 
 async function populateLectureList () {
-    const data = await fetchServer({action: "sicher_getTopLectures"});
+    const data = await fetchServer({action: "sicher_getLectures"});
 
     for (let i = 0; i < data.data.length; i++) {
         const listHtml = `
         <div class="col">
-            <div class="tile news-tile shadow animation-up" id="lecture-list-${i}">
+            <div class="tile news-tile shadow" id="lecture-list-${i}">
                 <h2>${decodeURI(data.data[i].lectureName)}</h2>
                 <p>${decodeURI(data.data[i].data)}...</p>
                 <span class="material-symbols-outlined">
@@ -31,23 +31,14 @@ async function populateLectureList () {
         $(`#lecture-list-${i}`).click(function () {
             goToLecture(data.data[i].sicherLectureId);
         });
-
-        const carouselHtml = `
-        <div class="client carousel-item${i === 0 ? " active" : ""}">
-            <div class="inner">
-                <div class="tile news-tile shadow animation-up" id="lecture-carousel-${i}">
-                    <h2>${decodeURI(data.data[i].lectureName)}</h2>
-                    <p>${decodeURI(data.data[i].data)}...</p>
-                    <span class="material-symbols-outlined">
-                    arrow_forward
-                    </span>
-                </div>
-            </div>
+    }
+    for (let i = data.data.length % 3; i < 3; i++) {
+        const listHtml = `
+        <div class="col">
+        <div></div>
         </div>`;
-        $('#lecture-carousel-list').append(carouselHtml);
-        $(`#lecture-carousel-${i}`).click(function () {
-            goToLecture(data.data[i].sicherLectureId);
-        });
+        console.log(i);
+        $('#lecture-list').append(listHtml);
     }
 }
 

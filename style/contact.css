@@ -82,25 +82,6 @@ textarea {
     resize: none;
 
 }
-a.button, button {
-    background-color:#A33035;
-    text-decoration: none;
-    color: white;
-    padding: .8rem 2rem .8rem 2rem;
-    margin-right: 1rem;
-    cursor: pointer;
-    border: none;
-
-    font-family: "Inter";
-    font-size: 16;
-    font-weight: 600;
-    display: inline;
-    letter-spacing: 0.5px;
-    transition: .2s ease;
-}
-a.button:hover, button:hover {
-    background-color:#D41C3A;
-}
 label {
     font-size: 16pt;
 }

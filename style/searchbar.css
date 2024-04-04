@@ -2,7 +2,7 @@
     display:inline;
     position:absolute;
     margin-top: 1.3rem;
-    margin-left: 1rem;
+    margin-left: 1.3rem;
     color: black !important;
     text-shadow: none !important;
 }
@@ -12,8 +12,11 @@
     display:inline;
 }
 
+.search > form > input[type=text]:focus {
+    outline: none;
+}
+
 .search > form > input[type=text] {
-    height: 4rem;
     border: none;
     border-radius: 2rem;
     height: 4rem;
