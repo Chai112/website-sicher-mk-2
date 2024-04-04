@@ -83,6 +83,13 @@
 .top.splash .section {
     height: 0;
 }
+.client-brands .inner{
+    margin:auto;
+}
+.client-brands img {
+    height: 10rem !important;
+    filter: sepia(100%) hue-rotate(-45deg) saturate(200%);
+}
 
 
 
@@ -201,6 +208,9 @@
     .carousel-control-prev-icon {
         margin-right: -10rem;
         opacity: 100%;
+    }
+    .client-brands img {
+        height: 5rem !important;
     }
 }
 
