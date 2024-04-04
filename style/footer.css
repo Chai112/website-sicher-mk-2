@@ -22,7 +22,7 @@
     margin-top: 3rem;
     margin-bottom: 2rem;
 }
-#footer button {
+#footer button.email, #footer button.facebook, #footer button.linkedin {
     width: 60px;
     height: 60px;
     border: transparent;
@@ -39,6 +39,7 @@
 #footer button.linkedin {
     background-image: url("/img/contact/linkedin.png");
 }
+
 
 @media (max-width: 900px) {
     #footer h2 {
