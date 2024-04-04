@@ -33,7 +33,7 @@ async function updateLectureList() {
     } 
 
     const fuse = new Fuse(globalLectureData, {
-        keys: ['lectureName', 'instructors', 'dateHeld']
+        keys: ['lectureName', 'instructors', 'dateHeld', 'data']
     })
     let lectureData = [];
     const output = fuse.search(searchTerm);
