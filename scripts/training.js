@@ -13,9 +13,13 @@ async function goToLecture(sicherLectureId) {
     window.location.href = `/lecture.html?id=${sicherLectureId}`;
 }
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 async function populateLectureList () {
+
     const data = await fetchServer({action: "sicher_getLectures"});
 
+    $("#lecture-list").empty();
     for (let i = 0; i < data.data.length; i++) {
         const listHtml = `
         <div class="col">
