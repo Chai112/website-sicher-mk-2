@@ -108,6 +108,7 @@ async function initLectureEditorForm() {
                     trainingId: `${sicherLectureId}000`,
                     dateStart: "",
                     venue: "",
+                    province: "",
                     notes: "",
                     isCanceled: false,
                 }
@@ -144,6 +145,7 @@ function updateLectureFormData(lectureData) {
                 trainingId: `${sicherLectureId}000`,
                 dateStart: "",
                 venue: "",
+                province: "",
                 notes: "",
                 isCanceled: false,
             }
@@ -153,6 +155,7 @@ function updateLectureFormData(lectureData) {
         const trainingId = lectureData.trainings[i].trainingId;
         const dateStart = lectureData.trainings[i].dateStart;
         const venue = lectureData.trainings[i].venue;
+        const province = lectureData.trainings[i].province;
         const notes = lectureData.trainings[i].notes;
         const isCanceled = lectureData.trainings[i].isCanceled;
 
@@ -168,6 +171,8 @@ function updateLectureFormData(lectureData) {
                 <input type="text" id="lectureEditorForm_training${i}_dateStart" name="lectureEditorForm_training${i}_dateStart" value="${dateStart}"><br>
                 <label for="lectureEditorForm_training${i}_venue">Venue</label><br>
                 <input type="text" id="lectureEditorForm_training${i}_venue" name="lectureEditorForm_training${i}_venue" value="${venue}"><br>
+                <label for="lectureEditorForm_training${i}_province">Province</label><br>
+                <input type="text" id="lectureEditorForm_training${i}_province" name="lectureEditorForm_training${i}_province" value="${province}"><br>
                 <label for="lectureEditorForm_training${i}_notes">Notes</label><br>
                 <input type="text" id="lectureEditorForm_training${i}_notes" name="lectureEditorForm_training${i}_notes" value="${notes}"><br>
                 <p id="lectureEditorForm_training${i}_isCanceled"></p>
@@ -207,6 +212,7 @@ function getLectureFormData() {
             trainingId: $(`#lectureEditorForm_training${i}_trainingId`).html(),
             dateStart: $(`#lectureEditorForm_training${i}_dateStart`).val(),
             venue: $(`#lectureEditorForm_training${i}_venue`).val(),
+            province: $(`#lectureEditorForm_training${i}_province`).val(),
             notes: $(`#lectureEditorForm_training${i}_notes`).val(),
             isCanceled: $(`#lectureEditorForm_training${i}_isCanceled`).html() != "",
         });
@@ -252,6 +258,7 @@ function addBelowTrainingSection(i) {
             .padStart(3, '0')}`,
         dateStart: "",
         venue: "",
+        province: "",
         notes: "",
         isCanceled: false,
     }
