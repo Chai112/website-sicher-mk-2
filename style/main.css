@@ -208,6 +208,24 @@ a.button:hover, button:hover {
     animation: shimmer 1s infinite linear;
  }
 
+table, th, td {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: auto;
+    padding: 0.5rem;
+}
+table {
+    width: 100%;
+}
+.book-button-td {
+    width: 1rem;
+}
+.book-button-td button {
+    margin: auto;
+    padding: .5rem 2rem .5rem 2rem;
+}
  @keyframes shimmer {
     to {
        background-position-x: 0%
