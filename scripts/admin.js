@@ -158,12 +158,12 @@ function updateLectureFormData(lectureData) {
 
         if (isCanceled) {
             var html = `<div class="box" style="display: none">
-                <p id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
+                <p style="font-size:5pt" id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
                 <p id="lectureEditorForm_training${i}_isCanceled">CANCELED</p>
             </div>`;
         } else {
             var html = `<div class="box">
-                <p id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
+                <p style="font-size:5pt" id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
                 <l for="lectureEditorForm_training${i}_dateStart">Date Start</label><br>
                 <input type="text" id="lectureEditorForm_training${i}_dateStart" name="lectureEditorForm_training${i}_dateStart" value="${dateStart}"><br>
                 <label for="lectureEditorForm_training${i}_venue">Venue</label><br>
