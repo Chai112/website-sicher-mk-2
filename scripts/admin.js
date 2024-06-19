@@ -31,8 +31,8 @@ async function changeLecture() {
         sicherAdminToken: "dasani",
         lectureName: $("#lectureEditorForm_lectureName").val(),
         cost:  $("#lectureEditorForm_cost").val(),
-        dateHeld:  $("#lectureEditorForm_dateHeld").val(),
-        venue:  $("#lectureEditorForm_venue").val(),
+        dateHeld:  "", // DEPRECATED
+        venue:  "", // DEPRECATED
         instructors:  $("#lectureEditorForm_instructors").val(),
         data: JSON.stringify(lectureData),
     });
@@ -58,8 +58,6 @@ async function getLectures() {
                 '<td>' + data.data[i].sicherLectureId + '</td>' + 
                 '<td>' + decodeURI(data.data[i].lectureName) + '</td>' + 
                 '<td>' + data.data[i].cost+ '</td>' +
-                '<td>' + decodeURI(data.data[i].dateHeld) + '</td>' +
-                '<td>' + decodeURI(data.data[i].venue) + '</td>' +
                 '<td>' + decodeURI(data.data[i].instructors) + '</td>' +
                 '</tr>';
     }
@@ -94,8 +92,8 @@ async function initLectureEditorForm() {
 
     $("#lectureEditorForm_lectureName").val(decodeURI(data.data[0].lectureName))
     $("#lectureEditorForm_cost").val(data.data[0].cost)
-    $("#lectureEditorForm_dateHeld").val(decodeURI(data.data[0].dateHeld))
-    $("#lectureEditorForm_venue").val(decodeURI(data.data[0].venue))
+    //$("#lectureEditorForm_dateHeld").val(decodeURI(data.data[0].dateHeld))
+    //$("#lectureEditorForm_venue").val(decodeURI(data.data[0].venue))
     $("#lectureEditorForm_instructors").val(decodeURI(data.data[0].instructors))
     
     let lectureData = {}
@@ -105,6 +103,15 @@ async function initLectureEditorForm() {
 
     if (Object.keys(lectureData).length == 0) {
         lectureData = {
+            trainings: [
+                {
+                    trainingId: `${sicherLectureId}000`,
+                    dateStart: "",
+                    venue: "",
+                    notes: "",
+                    isCanceled: false,
+                }
+            ],
             data: [
                 {
                     sectionName: "Overview",
@@ -126,7 +133,52 @@ async function initLectureEditorForm() {
 }
 
 function updateLectureFormData(lectureData) {
+    console.log(lectureData.trainings);
     $('#lectureEditorForm_dataBox').empty(); // clear all children
+    $('#lectureEditorForm_trainingsBox').empty(); // clear all children
+    let sicherLectureId = new URLSearchParams(window.location.search).get("sicherLectureId");
+    // for lectureData trainings
+    if (lectureData.trainings === undefined) {
+        lectureData.trainings = [
+            {
+                trainingId: `${sicherLectureId}000`,
+                dateStart: "",
+                venue: "",
+                notes: "",
+                isCanceled: false,
+            }
+        ]
+    }
+    for (let i = 0; i < lectureData.trainings.length; i++) {
+        const trainingId = lectureData.trainings[i].trainingId;
+        const dateStart = lectureData.trainings[i].dateStart;
+        const venue = lectureData.trainings[i].venue;
+        const notes = lectureData.trainings[i].notes;
+        const isCanceled = lectureData.trainings[i].isCanceled;
+
+        if (isCanceled) {
+            var html = `<div class="box" style="display: none">
+                <p id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
+                <p id="lectureEditorForm_training${i}_isCanceled">CANCELED</p>
+            </div>`;
+        } else {
+            var html = `<div class="box">
+                <p id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
+                <l for="lectureEditorForm_training${i}_dateStart">Date Start</label><br>
+                <input type="text" id="lectureEditorForm_training${i}_dateStart" name="lectureEditorForm_training${i}_dateStart" value="${dateStart}"><br>
+                <label for="lectureEditorForm_training${i}_venue">Venue</label><br>
+                <input type="text" id="lectureEditorForm_training${i}_venue" name="lectureEditorForm_training${i}_venue" value="${venue}"><br>
+                <label for="lectureEditorForm_training${i}_notes">Notes</label><br>
+                <input type="text" id="lectureEditorForm_training${i}_notes" name="lectureEditorForm_training${i}_notes" value="${notes}"><br>
+                <p id="lectureEditorForm_training${i}_isCanceled"></p>
+
+                <button type='button' onclick="addBelowTrainingSection(${i})">Add below</button>
+                <button type='button' onclick="removeTrainingSection(${i})">Remove</button>
+            </div>`;
+        }
+        $('#lectureEditorForm_trainingsBox').append(html);
+    }
+    // for lectureData lecture
     for (let i = 0; i < lectureData.data.length; i++) {
         const sectionName = lectureData.data[i].sectionName;
         const sectionDescription = lectureData.data[i].sectionDescription;
@@ -134,9 +186,9 @@ function updateLectureFormData(lectureData) {
         const html = `<div class="box">
             <label for="lectureEditorForm_sectionName${i}">Section Name</label><br>
             <input type="text" id="lectureEditorForm_sectionName${i}" name="lectureEditorForm_sectionName${i}" value="${sectionName}"><br>
-
             <label for="lectureEditorForm_sectionDescription${i}">Section Data</label><br>
             <textarea id="lectureEditorForm_sectionDescription${i}" name="lectureEditorForm_sectionDescription${i}" cols="70" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>${sectionDescription}</textarea><br><br>
+
             <button type='button' onclick="addAboveLectureSection(${i})">Add above</button>
             <button type='button' onclick="addBelowLectureSection(${i})">Add below</button>
             <button type='button' onclick="removeLectureSection(${i})">Remove</button>
@@ -149,7 +201,16 @@ function updateLectureFormData(lectureData) {
 }
 
 function getLectureFormData() {
-    let lectureData = {data: []};
+    let lectureData = {data: [], trainings: []};
+    for (let i = 0; i < $("#lectureEditorForm_trainingsBox").children().length; i++) {
+        lectureData.trainings.push({
+            trainingId: $(`#lectureEditorForm_training${i}_trainingId`).html(),
+            dateStart: $(`#lectureEditorForm_training${i}_dateStart`).val(),
+            venue: $(`#lectureEditorForm_training${i}_venue`).val(),
+            notes: $(`#lectureEditorForm_training${i}_notes`).val(),
+            isCanceled: $(`#lectureEditorForm_training${i}_isCanceled`).html() != "",
+        });
+    }
     for (let i = 0; i < $("#lectureEditorForm_dataBox").children().length; i++) {
         lectureData.data.push({
             sectionName: $(`#lectureEditorForm_sectionName${i}`).val(),
@@ -178,6 +239,37 @@ function removeLectureSection(i) {
         return;
     }
     lectureData.data.splice(i, 1); // insert element at i, deleting 0 elemenst
+    updateLectureFormData(lectureData);
+}
+
+function addBelowTrainingSection(i) {
+    let lectureData = getLectureFormData();
+    const sicherLectureId = new URLSearchParams(window.location.search).get("sicherLectureId");
+    const latestTrainingId = String(Number(lectureData.trainings[lectureData.trainings.length-1].trainingId) + 1);
+    const newTraining = {
+        trainingId: `${sicherLectureId}${latestTrainingId
+            .substring(latestTrainingId.length -3,latestTrainingId.length)
+            .padStart(3, '0')}`,
+        dateStart: "",
+        venue: "",
+        notes: "",
+        isCanceled: false,
+    }
+    lectureData.trainings.push(newTraining); // insert element at i, deleting 0 elemenst
+    updateLectureFormData(lectureData);
+}
+
+function removeTrainingSection(i) {
+    let lectureData = getLectureFormData();
+    let numActiveTrainings = 0;
+    for (let i = 0; i < lectureData.trainings.length; i++) {
+        if (!lectureData.trainings[i].isCanceled) numActiveTrainings++;
+    }
+    if (numActiveTrainings <= 1) {
+        alert("Can't have 0 sections! Add a new section before deleting this one.")
+        return;
+    }
+    lectureData.trainings[i].isCanceled = true;
     updateLectureFormData(lectureData);
 }
 
