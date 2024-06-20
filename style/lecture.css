@@ -41,3 +41,24 @@ table {
     margin: auto;
     padding: .5rem 2rem .5rem 2rem;
 }
+
+@media (max-width: 900px) {
+    .lecture-tile {
+        padding: 0.5rem;
+    }
+    table, th, td {
+        padding: 0.5rem;
+        font-size: 10pt;
+    }
+    .book-button-td button {
+        margin: auto;
+        font-size: 10pt;
+        padding: .3rem 1rem .3rem 1rem;
+    }
+    .lecture-tile h1 {
+        font-size: 24pt;
+    }
+    .lecture-tile h2 {
+        font-size: 20pt;
+    }
+}

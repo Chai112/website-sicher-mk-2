@@ -143,7 +143,7 @@ h4 {
 p {
     white-space: pre-wrap;
     font-size: 14pt;
-    text-align: justify;
+    text-align: left;
 }
 a {
     color: #A33035;
@@ -238,5 +238,8 @@ a.button:hover, button:hover {
     }
     h3 {
         font-size: 14pt;
+    }
+    p {
+        font-size: 12pt;
     }
 }
