@@ -22,6 +22,9 @@
     margin-top: 3rem;
     margin-bottom: 2rem;
 }
+.col-sm{
+    padding: 0
+}
 #footer button.email, #footer button.facebook, #footer button.linkedin {
     width: 60px;
     height: 60px;

@@ -8,7 +8,7 @@ $(document).ready(function(){
     var forceAtTop = false;
     function checkShowTop () {
         var currentScrollPos = window.pageYOffset;
-        if (currentScrollPos < (screen.height / 2) - 110) {
+        if (currentScrollPos < (screen.height / 2) - 200) {
             document.getElementById("navbar").classList.add("at-top");
             document.getElementById("navbar").classList.remove("shadow");
             $("body").css("background-color", "#A33035");

@@ -1,0 +1,90 @@
+.scholauth .scholauth-container {
+    background-color: white;
+    width: 30rem;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.scholauth .hidden {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+}
+.scholauth p,li,label,textarea,input,select,button {
+    font-weight: regular;
+    font-size: 12pt;
+    line-height: 1.5;
+}
+.scholauth input[type=text], input[type=password], select, textarea {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    font-size: 12pt;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 20rem;
+}
+.scholauth form .error-text {
+    transition-delay: 0s;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #D41C3A;
+    font-size: 16;
+}
+.scholauth form .shake {
+    animation: shake ease-in-out .4s;
+}
+.scholauth .scholauth-logo-container .scholauth-h1 {
+    color: #D41C3A;
+    display: inline;
+}
+.scholauth .scholauth-logo-container img {
+    width: 9rem;
+    margin-left: .2rem;
+    margin-top: .1rem;
+    display: inline;
+}
+.scholauth .scholauth-logo-container {
+    margin-top: 3rem;
+}
+.scholauth .scholauth-button-container {
+    margin-top: 1rem;
+}
+
+.scholauth a.button, .scholauth button {
+    background-color:#D41C3A;
+    text-decoration: none;
+    color: white;
+    padding: .9rem 1.2rem .9rem 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+
+    font-size: 10pt;
+    display: inline;
+    transition: .2s ease;
+}
+.scholauth a.button:hover, .scholauth button:hover {
+    background-color:#A1152C;
+}
+
+.scholauth a.button.style2, .scholauth button.style2 {
+    background-color:#D41C3A20;
+    color: #D41C3A;
+    letter-spacing: 0.5px;
+}
+.scholauth a.button.style2:hover, .scholauth button.style2:hover {
+    background-color:#D41C3A50;
+}
+@keyframes shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(10px) }
+    50% { transform: translateX(-10px) }
+    75% { transform: translateX(10px) }
+    100% { transform: translateX(0) }
+}

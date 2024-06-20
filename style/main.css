@@ -144,6 +144,14 @@ p {
     font-size: 12pt;
     text-align: justify;
 }
+a {
+    color: #A33035;
+    text-decoration: underline;
+    font-weight: 600;
+}
+a:hover {
+    color: #D41C3A;
+}
 
 .brand img {
     color: #000;

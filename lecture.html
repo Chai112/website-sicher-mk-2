@@ -29,7 +29,7 @@
             });
         </script>
         <script src="scripts/slow-scroll.js"></script>
-        <script src="/scripts/lecture.js" type="module"></script>
+        <script src="/scripts/lecture.js"></script>
     
     </head>
     <!-- Google tag (gtag.js) -->
@@ -43,22 +43,29 @@
     </script>
     <body>
         <div id="placeholder-header"></div>
-        <div class="top splash big">
+        <div class="top splash small desktop-only">
             <div class="section">
                 <img class="slow-scroll" src="img/psm.jpg" alt="Responsive image">
-                <div class="section">
-                    <div class="container">
-                        <div class="text slow-scroll-2">
-                            <h1 id="lecture-title"></h1>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="section color-3">
+            <div class="spacer mobile-only"></div>
             <div class="container">
-                <div class="mini-spacer"></div>
                 <div class="row">
+                    <div class="col">
+                        <div class="lecture-tile">
+                            <div>
+                                <h1 id="lecture-title"></h1>
+                                <div><br></div>
+                                <div id="price-content"></div>
+                                <div id="trainings-content">
+                                    <div class="shimmer"></div>
+                                    <div class="shimmer"></div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col">
                         <div id="lecture-content">
                             <div class="shimmer"></div>
@@ -72,18 +79,6 @@
                             <br>
                             <div class="shimmer"></div>
                             <div class="shimmer"></div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="lecture-tile shadow">
-                            <div>
-                                <div id="price-content"></div>
-                                <div id="trainings-content">
-                                    <div class="shimmer"></div>
-                                    <div class="shimmer"></div>
-                                    <br>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

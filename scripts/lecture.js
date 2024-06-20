@@ -9,6 +9,10 @@ async function fetchServer(data) {
     return response.json();
 }
 
+function bookLecture(trainingId) {
+    window.location.href=`checkout.html?trainingId=${trainingId}`;
+}
+
 async function loadLecture() {
     const sicherLectureId = new URLSearchParams(window.location.search).get("id");
     const data = await fetchServer({
@@ -16,10 +20,12 @@ async function loadLecture() {
         sicherLectureId: sicherLectureId,
     });
     $("#lecture-title").text(decodeURI(data.data[0].lectureName));
+    $("#lecture-title-2").text(decodeURI(data.data[0].lectureName));
     const lectureData = JSON.parse(decodeURI(data.data[0].data));
 
     // training data
     $("#trainings-content").empty();
+    $("#trainings-content-2").empty();
     if (lectureData.trainings !== undefined) {
         let includeNotes = false;
         for (let i = 0; i < lectureData.trainings.length; i++) {
@@ -47,7 +53,7 @@ async function loadLecture() {
                 <td>${lectureData.trainings[i].venue}</td>
                 <td>${lectureData.trainings[i].province}</td>
                 <td class="book-button-td">
-                    <button class="button" onclick="bookLecture()">Book</button>
+                    <button onclick="bookLecture(${String(lectureData.trainings[i].trainingId)})">Book</button>
                 </td>
                 ${includeNotes ? "<td>" + lectureData.trainings[i].notes + "</td>" : ""}
             </tr>`;
@@ -55,6 +61,7 @@ async function loadLecture() {
 
         html += `</table>`;
         $('#trainings-content').append(html);
+        $('#trainings-content-2').append(html);
     }
 
     // syllabus data
@@ -70,11 +77,8 @@ async function loadLecture() {
     }
 
     // price data
-    $('#price-content').html(`<h1>THB ${data.data[0].cost}</h1><h2>per person</h2>`);
-}
-
-function bookLecture(trainingId) {
-    console.log("booking" + trainingId);
+    $('#price-content').html(`<h2>THB ${data.data[0].cost}</h2>`);
+    $('#price-content-2').html(`<h2>THB ${data.data[0].cost}</h2>`);
 }
 
 $(document).ready(function(){
