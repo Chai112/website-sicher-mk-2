@@ -37,6 +37,7 @@ input, textarea {
     font-size: 10pt;
     border-radius: 4px;
     border: 1px hidden;
+    width: 30rem;
 
     margin-bottom: 2rem;
 }
@@ -63,4 +64,17 @@ button, input[type=submit] {
     border: solid #36465f 1px;
     border-radius: 4px;
     max-width: 50rem;
+}
+
+.col {
+    float: left;
+    width: 40%;
+    padding: 0 2rem 0 0;
+  }
+  
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

@@ -93,6 +93,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 14pt;
 }
 html, body {
     overflow-x: hidden;
@@ -141,7 +142,7 @@ h4 {
 }
 p {
     white-space: pre-wrap;
-    font-size: 12pt;
+    font-size: 14pt;
     text-align: justify;
 }
 a {
@@ -196,7 +197,7 @@ a.button, button {
     cursor: pointer;
     border: none;
 
-    font-size: 16;
+    font-size: 14pt;
     font-weight: 600;
     display: inline;
     letter-spacing: 0.5px;

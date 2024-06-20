@@ -53,7 +53,7 @@ async function loadLecture() {
                 <td>${lectureData.trainings[i].venue}</td>
                 <td>${lectureData.trainings[i].province}</td>
                 <td class="book-button-td">
-                    <button onclick="bookLecture(${String(lectureData.trainings[i].trainingId)})">Book</button>
+                    <button onclick="bookLecture(${String(lectureData.trainings[i].trainingId)})">RSVP</button>
                 </td>
                 ${includeNotes ? "<td>" + lectureData.trainings[i].notes + "</td>" : ""}
             </tr>`;

@@ -10,7 +10,7 @@
     min-width: 30rem;
 }
 #footer h2 {
-    font-size: 14pt;
+    font-size: 16pt;
     text-align: left;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -35,12 +35,15 @@
 }
 #footer button.email{
     background-image: url("/img/contact/email.png");
+    background-repeat: no-repeat;
 }
 #footer button.facebook {
     background-image: url("/img/contact/facebook.png");
+    background-repeat: no-repeat;
 }
 #footer button.linkedin {
     background-image: url("/img/contact/linkedin.png");
+    background-repeat: no-repeat;
 }
 
 
