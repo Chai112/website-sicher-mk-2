@@ -54,40 +54,52 @@
                     <div class="col">
                         <div class="scholauth">
                             <div class="scholauth-container">
-                                <form id="registerForm">
-                                    <label for="name">Full Name</label><br>
-                                    <label class="error-text" id="error-name">Name Error</label>
-                                    <input type="text" id="name" name="name"><br>
+                                <div id="register-page" class="scholauth-page hidden">
+                                    <form id="register-form">
+                                        <label for="name">Full Name</label><br>
+                                        <label class="error-text"   id="register-error-name">Name Error</label>
+                                        <input type="text"          id="register-name" name="name"><br>
 
-                                    <label for="email">Email</label><br>
-                                    <label class="error-text" id="error-email">Email Error</label>
-                                    <input type="text" id="email" name="email"><br>
+                                        <label for="email">Email</label><br>
+                                        <label class="error-text"   id="register-error-email">Email Error</label>
+                                        <input type="text"          id="register-email" name="email"><br>
 
-                                    <label for="password">Password</label><br>
-                                    <label class="error-text" id="error-password">Password Error</label>
-                                    <input type="password" id="password" name="password"><br>
-                                    <div class="spacer-mini"></div>
-                                    <div class="scholauth-button-container">
-                                        <button id="register-button" type="submit" onclick="register()" class="button">Register</button>
-                                        <button type="button" onclick="toggleLoginRegister()" class="button style2">Log into Existing Account</button>
-                                    </div>
-                                    <div id="register-loader" class="loader hidden"></div>
-                                </form>
-                                <form id="loginForm">
-                                    <label for="email">Email</label><br>
-                                    <label class="error-text" id="error-email">Email Error</label>
-                                    <input type="text" id="email" name="email"><br>
+                                        <label for="password">Password</label><br>
+                                        <label class="error-text"   id="register-error-password">Password Error</label>
+                                        <input type="password"      id="register-password" name="password"><br>
+                                        <div class="spacer-mini"></div>
+                                        <div class="scholauth-button-container">
+                                            <button id="register-button" type="button" onclick="register()" class="button">Register</button>
+                                            <button type="button" onclick="toggleLoginRegister()" class="button style2">Log into Existing Account</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="login-page" class="scholauth-page hidden">
+                                    <form id="login-form">
+                                        <label for="email">Email</label><br>
+                                        <label class="error-text"   id="login-error-email">Email Error</label>
+                                        <input type="text"          id="login-email" name="email"><br>
 
-                                    <label for="password">Password</label><br>
-                                    <label class="error-text" id="error-password">Password Error</label>
-                                    <input type="password" id="password" name="password"><br>
-                                    <div class="spacer-mini"></div>
-                                    <div class="scholauth-button-container">
-                                        <button id="register-button" type="submit" onclick="register()" class="button">Login</button>
-                                        <button type="button" onclick="toggleLoginRegister()" class="button style2">Create New Account</button>
-                                    </div>
-                                    <div id="login-loader" class="loader hidden"></div>
-                                </form>
+                                        <label for="password">Password</label><br>
+                                        <label class="error-text"   id="login-error-password">Password Error</label>
+                                        <input type="password"      id="login-password" name="password"><br>
+                                        <div class="spacer-mini"></div>
+                                        <div class="scholauth-button-container">
+                                            <button id="register-button" type="button" onclick="login()" class="button">Login</button>
+                                            <button type="button" onclick="toggleLoginRegister()" class="button style2">Create New Account</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="init-page" class="scholauth-page hidden">
+                                    <div class="scholauth-shimmer"></div>
+                                    <div class="scholauth-shimmer"></div>
+                                </div>
+                                <div id="checkout-page" class="scholauth-page hidden">
+                                    <div class="scholauth-h1">Redirecting...</div>
+                                    <div class="scholauth-p">Successfully logged in. Please wait while you are being redirected...</div>
+                                </div>
+                                <div id="init-error" class="error-text hidden"></div>
+                                <div id="loader" class="scholauth-loader hidden"></div>
                                 <div class="scholauth-logo-container">
                                     <img src="/img/scholarity-logo.png">
                                 </div>
@@ -95,7 +107,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <h1>Please login to RSVP.<br>No payment required.</h1>
+                        <h1>Please login to reserve.<br>No payment required.</h1>
                         <p>Please create a Scholarity account or log into a existing account to reserve your place. Sicher brings you secure booking through Scholarity. All your data is securely handled within our servers. No payment data is required.<br><br></p>
                         <p>By creating an account, you agree to Scholarity's <a href="https://www.scholarity.io/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> and <a href="https://www.scholarity.io/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
                     </div>

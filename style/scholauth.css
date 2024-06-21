@@ -1,8 +1,12 @@
+.scholauth {
+    font-family: "Inter";
+}
+
 .scholauth .scholauth-container {
     background-color: white;
     margin: 2rem;
     padding: 2rem;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     border-radius: 8px;
     min-width: 20rem;
 }
@@ -11,9 +15,19 @@
     visibility: hidden;
     position: absolute;
 }
-.scholauth p,li,label,textarea,input,select,button {
+/* there are multiple pages (e.g., login, register, checkout) in that one container */
+.scholauth .scholauth-page {
+    min-height: 10rem;
+}
+
+.scholauth .scholauth-h1 {
+    font-size: 20pt;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.scholauth .scholauth-p,li,label,textarea,input,select,button {
     font-weight: regular;
-    font-size: 12pt;
+    font-size: 14pt;
     line-height: 1.5;
 }
 .scholauth input[type=text], input[type=password], select, textarea {
@@ -29,20 +43,20 @@
     width: 100%;
     max-width: 20rem;
 }
-.scholauth form .error-text {
+.scholauth .error-text {
+    white-space: pre;
     transition-delay: 0s;
     display: block;
-    margin-top: 0;
+    margin-top: -.5rem;
     margin-bottom: 0;
     color: #D41C3A;
-    font-size: 16;
+    font-size: 12pt;
 }
 .scholauth form .shake {
     animation: shake ease-in-out .4s;
 }
-.scholauth .scholauth-logo-container .scholauth-h1 {
+.scholauth .scholauth-logo-container {
     color: #D41C3A;
-    display: inline;
 }
 .scholauth .scholauth-logo-container img {
     width: 9rem;
@@ -83,6 +97,38 @@
 .scholauth a.button.style2:hover, .scholauth button.style2:hover {
     background-color:#D41C3A50;
 }
+
+.scholauth .scholauth-loader {
+    border: .5rem solid #f3f3f3; /* Light grey */
+    border-top: .5rem solid #D41C3A; /* Blue */
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    animation: spin 0.5s linear infinite;
+    display: inline-block;
+}
+.scholauth .scholauth-shimmer {
+    background-color: grey;
+    height: 2rem;
+    margin: 1rem 0 1rem 0;
+    border-radius: 8px;
+    background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+    background-size: 300%;
+    background-position-x: 100%;
+    animation: shimmer 1s infinite linear;
+    max-width: 20rem;
+ }
+
+ @keyframes shimmer {
+    to {
+       background-position-x: 0%
+    }
+ }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 @keyframes shake {
     0% { transform: translateX(0) }
     25% { transform: translateX(10px) }
@@ -92,8 +138,8 @@
 }
 @media (max-width: 900px) {
     .scholauth .scholauth-container {
-        margin: 1rem;
-        padding: 1rem;
+        margin: 0;
+        padding: 1.5rem;
         min-width: 0;
     }
 }
