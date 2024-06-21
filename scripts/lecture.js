@@ -77,8 +77,8 @@ async function loadLecture() {
     }
 
     // price data
-    $('#price-content').html(`<h2>THB ${data.data[0].cost}</h2>`);
-    $('#price-content-2').html(`<h2>THB ${data.data[0].cost}</h2>`);
+    $('#price-content').html(`<h2>THB ${data.data[0].cost} (paid later)</h2>`);
+    $('#price-content-2').html(`<h2>THB ${data.data[0].cost} (paid later)</h2>`);
 }
 
 $(document).ready(function(){

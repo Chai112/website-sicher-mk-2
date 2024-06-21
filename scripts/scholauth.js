@@ -40,7 +40,8 @@ function authenticate(token) {
 async function checkout() {
     gotoScholauthPage("checkout");
     await new Promise(resolve => setTimeout(resolve, 1000));
-    window.location.href = "reserved.html";
+    const trainingId = new URLSearchParams(window.location.search).get("trainingId");
+    window.location.href = `reserved.html?trainingId=${trainingId}`;
 }
 
 function showError(idName, value) {
@@ -241,12 +242,10 @@ function gotoScholauthPage(page) {
 }
 
 $(document).ready(async function(){
-    /*
     if (isAuthenticated()) {
         await checkout();
         return;
     }
-        */
 
     gotoScholauthPage("init");
     await pingServer();

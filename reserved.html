@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+ 
+        <title>Reserved | SICHER</title>
+        <link rel="icon" type="image/jpg" href="favicon.jpg">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style/main.css">
+        <link rel="stylesheet" type="text/css" href="style/navbar.css">
+        <link rel="stylesheet" type="text/css" href="style/footer.css">
+        <link rel="stylesheet" type="text/css" href="style/navcover.css">
+        <link rel="stylesheet" type="text/css" href="style/carousel.css">
+        <link rel="stylesheet" type="text/css" href="style/tile.css">
+        <link rel="stylesheet" type="text/css" href="style/news-tile.css">
+        <link rel="stylesheet" type="text/css" href="style/sections.css">
+        <link rel="stylesheet" type="text/css" href="style/headline.css">
+
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            $(function() {
+                $("#placeholder-header").load("template/nav.html");
+                $("#placeholder-footer").load("template/footer.html");
+                $("#placeholder-bookmark").load("template/bookmark.html");
+            });
+        </script>
+        <script src="scripts/slow-scroll.js"></script>
+        <script src="scripts/reserved.js"></script>
+    </head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-58Z2NSXGBK"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-58Z2NSXGBK');
+    </script>
+    <body>
+        <div id="placeholder-header"></div>
+        <div class="top splash small desktop-only">
+            <div class="section">
+                <img class="slow-scroll" src="img/psm.jpg" alt="Responsive image">
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <h1>Successfully Reserved!</h1>
+                <p>Your place is reserved, we'll send you an email reminder before the event.<br>Thank you for choosing Sicher.</p>
+                <table style="max-width: 40rem">
+                    <tr>
+                        <th>Name</th>
+                        <td id="user-name"></td>
+                    </tr>
+                    <tr class="alt-tr">
+                        <th>Email</th>
+                        <td id="user-email"></td>
+                    </tr>
+                    <tr>
+                        <th>Course Date</th>
+                        <td id="course-date"></td>
+                    </tr>
+                    <tr class="alt-tr">
+                        <th>Course Name</th>
+                        <td id="course-name"></td>
+                    </tr>
+                    <tr>
+                        <th>Course Venue</th>
+                        <td id="course-venue"></td>
+                    </tr>
+                    <tr class="alt-tr">
+                        <th>Course Province</th>
+                        <td id="course-province"></td>
+                    </tr>
+                </table>
+                <div class="spacer"></div>
+                <button onclick="window.location.href='/index.html';">Go back</button>
+            </div>
+        </div>
+        <div id="placeholder-footer"></div>
+    </body>
+</html>

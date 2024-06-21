@@ -217,6 +217,30 @@ a.button:hover, button:hover {
     animation: shimmer 1s infinite linear;
  }
 
+table, th, td {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border-collapse: collapse;
+    height: 2rem;
+    width: auto;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color:hsl(0, 20%, 98%);
+}
+table {
+    width: 100%;
+}
+.alt-tr td, .alt-tr th {
+    background-color:hsl(0, 20%, 90%);
+}
+.book-button-td {
+    width: 1rem;
+}
+.book-button-td button {
+    margin: auto;
+    padding: .5rem 2rem .5rem 2rem;
+}
+
  @keyframes shimmer {
     to {
        background-position-x: 0%
@@ -241,5 +265,14 @@ a.button:hover, button:hover {
     }
     p {
         font-size: 12pt;
+    }
+    table, th, td {
+        padding: 0.5rem;
+        font-size: 10pt;
+    }
+    .book-button-td button {
+        margin: auto;
+        font-size: 10pt;
+        padding: .3rem 1rem .3rem 1rem;
     }
 }
