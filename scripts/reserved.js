@@ -52,7 +52,6 @@ async function init() {
 
     try {
         const userData = await fetchServer({action: "getUserFromToken", token: token});
-        console.log(userData);
         $("#user-name").text(`${userData.firstName} ${userData.lastName}`);
         $("#user-email").text(userData.email);
     } catch (e) {

@@ -10,23 +10,13 @@ async function fetchServer(data) {
     });
 }
 
-async function pingServer() {
-    try {
-        const res = await fetchServer({});
-        //await new Promise(resolve => setTimeout(resolve, 2000));
-        return true;
-    } catch (e) {
-        $("#init-error").removeClass("hidden");
-        $("#init-error").text(`Failed to connect to Scholarity
-Please email contact@scholarity.io
-Error: ${e}`);
-        $("#init-page").addClass("hidden");
+async function isAuthenticated() {
+    const token = localStorage.getItem("scholauth-token");
+    const userData = await fetchServer({action: "getUserFromToken", token: token});
+    if (userData.status === 403) {
+        localStorage.setItem("scholauth-token", undefined);
         return false;
     }
-}
-
-function isAuthenticated() {
-    const token = localStorage.getItem("scholauth-token");
     if (token !== undefined) {
         return true;
     }
@@ -37,9 +27,8 @@ function authenticate(token) {
     localStorage.setItem("scholauth-token", token);
 }
 
-async function checkout() {
+function checkout() {
     gotoScholauthPage("checkout");
-    await new Promise(resolve => setTimeout(resolve, 1000));
     const trainingId = new URLSearchParams(window.location.search).get("trainingId");
     window.location.href = `reserved.html?trainingId=${trainingId}`;
 }
@@ -242,13 +231,22 @@ function gotoScholauthPage(page) {
 }
 
 $(document).ready(async function(){
-    if (isAuthenticated()) {
-        await checkout();
+    gotoScholauthPage("init");
+    try {
+        if (await isAuthenticated()) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            checkout();
+            return;
+        }
+
+    } catch (e) {
+        $("#init-error").removeClass("hidden");
+        $("#init-error").text(`Failed to connect to Scholarity
+Please email contact@scholarity.io
+Error: ${e}`);
+        $("#init-page").addClass("hidden");
         return;
     }
-
-    gotoScholauthPage("init");
-    await pingServer();
     gotoScholauthPage("register");
   
     // clear fields

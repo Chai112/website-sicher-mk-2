@@ -27,7 +27,7 @@
 }
 .scholauth .scholauth-p,li,label,textarea,input,select,button {
     font-weight: regular;
-    font-size: 14pt;
+    font-size: 12pt;
     line-height: 1.5;
 }
 .scholauth input[type=text], input[type=password], select, textarea {

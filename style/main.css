@@ -93,7 +93,6 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 14pt;
 }
 html, body {
     overflow-x: hidden;
@@ -142,7 +141,7 @@ h4 {
 }
 p {
     white-space: pre-wrap;
-    font-size: 14pt;
+    font-size: 12pt;
     text-align: left;
 }
 a {
@@ -197,7 +196,7 @@ a.button, button {
     cursor: pointer;
     border: none;
 
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: 600;
     display: inline;
     letter-spacing: 0.5px;
@@ -226,6 +225,7 @@ table, th, td {
     padding: 1rem;
     margin-top: 2rem;
     background-color:hsl(0, 20%, 98%);
+    font-size: 12pt;
 }
 table {
     width: 100%;
@@ -264,7 +264,7 @@ table {
         font-size: 14pt;
     }
     p {
-        font-size: 12pt;
+        font-size: 10pt;
     }
     table, th, td {
         padding: 0.5rem;
