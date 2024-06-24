@@ -162,7 +162,6 @@ function updateLectureFormData(lectureData) {
         if (isCanceled) {
             var html = `<div class="box" style="display: none">
                 <p style="font-size:5pt" id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
-                <p id="lectureEditorForm_training${i}_isCanceled">CANCELED</p>
             </div>`;
         } else {
             var html = `<div class="box">
@@ -280,7 +279,25 @@ function removeTrainingSection(i) {
     updateLectureFormData(lectureData);
 }
 
+const CORR_PASS = "dasani";
+
+function authenticate() {
+    const token = localStorage.getItem("sicheradmin-token");
+    let isAuthenticated = token === CORR_PASS;
+    while (!isAuthenticated) {
+        const pass = prompt("Please enter admin password");
+        if (pass === CORR_PASS) {
+            localStorage.setItem("sicheradmin-token", CORR_PASS);
+            isAuthenticated = true;
+        } else {
+            alert("auth failed");
+        }
+    }
+}
+
 $(document).ready(function(){
+    authenticate();
+
     getLectures();
     $("#createLectureButton").click(async function () {
         try {

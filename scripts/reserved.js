@@ -13,25 +13,33 @@ async function fetchServer(data) {
 }
 
 async function init() {
-    const trainingId = new URLSearchParams(window.location.search).get("trainingId");
+    const bookingId = new URLSearchParams(window.location.search).get("bookingId");
     const token = localStorage.getItem("scholauth-token");
-    if (token === undefined || trainingId === undefined) {
-        console.log("Error: either token or trainingId is undefined.");
+    if (token === undefined || bookingId === undefined) {
+        alert("Error: either token or bookingId is undefined.");
     }
+    const booking = (await fetchServer({
+        action: "sicher_getBooking",
+        sicherBookingId: bookingId
+    })).data;
 
-    const sicherLectureId = trainingId.substring(0, trainingId.length - 3);
+    const lectureData = booking.sicherLectureData
+    const bookingData = booking.bookingData
+
+    const trainingId = bookingData.sicherTrainingId
     try {
-        const lectureData = await fetchServer({action: "sicher_getLecture", sicherLectureId: sicherLectureId});
-        const trainingData = JSON.parse(decodeURI(lectureData.data[0].data)).trainings;
+        const trainingData = JSON.parse(decodeURI(lectureData.data)).trainings;
         let foundTraining = false;
+        $("#booking-id").text(bookingId);
+        $("#training-id").text(trainingId);
         for (let i = 0; i < trainingData.length; i++) {
             const training = trainingData[i];
-            if (training.trainingId === trainingId) {
+            if (training.trainingId.toString() === trainingId.toString()) {
                 if (!training.isCanceled) {
                     $("#course-date").text(training.dateStart);
-                    $("#course-name").text(decodeURI(lectureData.data[0].lectureName));
-                    $("#course-venue").text(training.venue);
-                    $("#course-province").text(training.province);
+                    $("#course-name").text(decodeURI(lectureData.lectureName));
+                    $("#course-venue").text(decodeURI(training.venue));
+                    $("#course-province").text(decodeURI(training.province));
                 } else {
                     $("#course-date").text("CANCELED");
                     $("#course-name").text("CANCELED");
@@ -51,9 +59,8 @@ async function init() {
     }
 
     try {
-        const userData = await fetchServer({action: "getUserFromToken", token: token});
-        $("#user-name").text(`${userData.firstName} ${userData.lastName}`);
-        $("#user-email").text(userData.email);
+        $("#user-name").text(`${decodeURI(booking.userName)}`);
+        $("#user-email").text(decodeURI(booking.userEmail));
     } catch (e) {
         alert(`error: acquiring userData: ${e}`);
         return;

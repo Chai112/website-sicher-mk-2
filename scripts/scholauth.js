@@ -14,6 +14,7 @@ async function isAuthenticated() {
     const token = localStorage.getItem("scholauth-token");
     const userData = await fetchServer({action: "getUserFromToken", token: token});
     if (userData.status === 403) {
+        console.log(403)
         localStorage.setItem("scholauth-token", undefined);
         return false;
     }
@@ -27,10 +28,20 @@ function authenticate(token) {
     localStorage.setItem("scholauth-token", token);
 }
 
-function checkout() {
+async function checkout() {
     gotoScholauthPage("checkout");
+    // TODO change this function
+    // this is specific to the type of thing you use the scholauth for
     const trainingId = new URLSearchParams(window.location.search).get("trainingId");
-    window.location.href = `reserved.html?trainingId=${trainingId}`;
+    const token = localStorage.getItem("scholauth-token");
+    const response = await fetchServer({
+        action: "sicher_createBooking",
+        sicherTrainingId: trainingId,
+        token: token,
+    });
+    const responseBody = await response.json();
+    const bookingId = responseBody.data;
+    window.location.href = `reserved.html?bookingId=${bookingId}`;
 }
 
 function showError(idName, value) {
@@ -75,15 +86,6 @@ async function login() {
     showError('login-error-email', "");
     showError('login-error-password', "");
 
-    if (email === "") {
-        showError('login-error-email', "Please enter your email.");
-        return;
-    }
-    if (password === "") {
-        showError('login-error-password', "Please enter your password.");
-        return;
-    }
-
     setButtonLoading(true);
     try {
         let response = await fetchServer({
@@ -99,17 +101,18 @@ async function login() {
             authenticate(responseBody.token);
             await checkout();
         } else {
-            switch (responseBody.message) {
-                case "no user exists":
-                    showError('login-error-email', "Username cannot be found.");
+            const errorData = responseBody.errorData;
+            switch (errorData.authErrorType) {
+                case "email":
+                case "general":
+                    showError('login-error-email', errorData.message);
                     break;
-                case "passwords do not match":
-                    showError('login-error-password', "Password is incorrect.");
+                case "password":
+                    showError('login-error-password', errorData.message);
                     break;
                 default:
                     alert("Something went wrong.");
                     showError('login-error-email', "Something went wrong.");
-                    break;
             }
             setButtonLoading(false);
             return;
@@ -134,24 +137,6 @@ async function register() {
     showError('register-error-email', "");
     showError('register-error-password', "");
 
-    if (name === "") {
-        showError('register-error-name', "Please enter your name.");
-        return;
-    }
-    if (email === "") {
-        showError('register-error-email', "Please enter your email.");
-        return;
-    }
-    var validRegex = /^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+/;
-    if (!email.match(validRegex)) {
-        showError('register-error-email', "Please enter a valid email.");
-        return;
-    }
-    if (password === "") {
-        showError('register-error-password', "Please enter your password.");
-        return;
-    }
-
     // parse the names
     const names = name.split(' ');
     let firstName = "", lastName = "";
@@ -164,12 +149,6 @@ async function register() {
         lastName = lastName.substring(0, lastName.length - 1);
     } else {
         firstName = name;
-    }
-
-    // extra policies
-    if (password.length < 8) {
-        showError('register-error-password', "Password is too short.");
-        return
     }
 
     setButtonLoading(true);
@@ -190,11 +169,21 @@ async function register() {
             authenticate(responseBody.token);
             await checkout();
         } else {
-            if (responseBody.message === "user already exists") {
-                showError('register-error-email', "Email already exists - Please login instead");
-            } else {
-                alert("Something went wrong.");
-                showError('register-error-email', "Something went wrong.");
+            const errorData = responseBody.errorData;
+            switch (errorData.authErrorType) {
+                case "name":
+                case "general":
+                    showError('register-error-name', errorData.message);
+                    break;
+                case "email":
+                    showError('register-error-email', errorData.message);
+                    break;
+                case "password":
+                    showError('register-error-password', errorData.message);
+                    break;
+                default:
+                    alert("Something went wrong.");
+                    showError('register-error-name', "Something went wrong.");
             }
             setButtonLoading(false);
             return;
@@ -235,7 +224,7 @@ $(document).ready(async function(){
     try {
         if (await isAuthenticated()) {
             await new Promise(resolve => setTimeout(resolve, 1000));
-            checkout();
+            await checkout();
             return;
         }
 
