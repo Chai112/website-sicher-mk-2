@@ -67,6 +67,7 @@
                                         <label for="password">Password</label><br>
                                         <label class="error-text"   id="register-error-password">Password Error</label>
                                         <input type="password"      id="register-password" name="password"><br>
+                                        <a id="register-password-hints" class="hidden">* Must be longer than 8 chars<br>* Must contain at least a number<br>* Must contain at least a letter</a>
                                         <div class="spacer-mini"></div>
                                         <div class="scholauth-button-container">
                                             <button id="register-button" type="button" onclick="register()" class="button">Register</button>
@@ -83,11 +84,13 @@
                                         <label for="password">Password</label><br>
                                         <label class="error-text"   id="login-error-password">Password Error</label>
                                         <input type="password"      id="login-password" name="password"><br>
+                                        <a href="forgot-password">Forgot Password?</a>
                                         <div class="spacer-mini"></div>
                                         <div class="scholauth-button-container">
                                             <button id="register-button" type="button" onclick="login()" class="button">Login</button>
                                             <button type="button" onclick="toggleLoginRegister()" class="button style2">Create New Account</button>
                                         </div>
+                                        <br>
                                     </form>
                                 </div>
                                 <div id="init-page" class="scholauth-page hidden">

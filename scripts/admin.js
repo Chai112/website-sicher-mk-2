@@ -111,6 +111,7 @@ async function initLectureEditorForm() {
                     province: "",
                     notes: "",
                     isCanceled: false,
+                    numOfBookings: 0,
                 }
             ],
             data: [
@@ -148,9 +149,36 @@ function updateLectureFormData(lectureData) {
                 province: "",
                 notes: "",
                 isCanceled: false,
+                numOfBookings: 0,
             }
         ]
     }
+    let html = `
+        <div class="box">
+            <table>
+                <tr>
+                    <th>
+                        trainingId
+                    </th>
+                    <th>
+                        <l for="lectureEditorForm_training_dateStart">Date Start</label><br>
+                    </th>
+                    <th>
+                        <label for="lectureEditorForm_training_venue">Venue</label><br>
+                    </th>
+                    <th>
+                        <label for="lectureEditorForm_training_province">Province</label><br>
+                    </th>
+                    <th>
+                        <label for="lectureEditorForm_training_notes">Notes</label><br>
+                    </th>
+                    <th>
+                        -<br>
+                    </th>
+                    <th>
+                    # of bookings
+                    </th>
+                </tr>`;
     for (let i = 0; i < lectureData.trainings.length; i++) {
         const trainingId = lectureData.trainings[i].trainingId;
         const dateStart = lectureData.trainings[i].dateStart;
@@ -158,30 +186,45 @@ function updateLectureFormData(lectureData) {
         const province = lectureData.trainings[i].province;
         const notes = lectureData.trainings[i].notes;
         const isCanceled = lectureData.trainings[i].isCanceled;
+        const numOfBookings = lectureData.trainings[i].numOfBookings;
+
 
         if (isCanceled) {
-            var html = `<div class="box" style="display: none">
+            html += `<div class="box" style="display: none">
                 <p style="font-size:5pt" id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
             </div>`;
         } else {
-            var html = `<div class="box">
-                <p style="font-size:5pt" id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
-                <l for="lectureEditorForm_training${i}_dateStart">Date Start</label><br>
-                <input type="text" id="lectureEditorForm_training${i}_dateStart" name="lectureEditorForm_training${i}_dateStart" value="${dateStart}"><br>
-                <label for="lectureEditorForm_training${i}_venue">Venue</label><br>
-                <input type="text" id="lectureEditorForm_training${i}_venue" name="lectureEditorForm_training${i}_venue" value="${venue}"><br>
-                <label for="lectureEditorForm_training${i}_province">Province</label><br>
-                <input type="text" id="lectureEditorForm_training${i}_province" name="lectureEditorForm_training${i}_province" value="${province}"><br>
-                <label for="lectureEditorForm_training${i}_notes">Notes</label><br>
-                <input type="text" id="lectureEditorForm_training${i}_notes" name="lectureEditorForm_training${i}_notes" value="${notes}"><br>
-                <p id="lectureEditorForm_training${i}_isCanceled"></p>
-
-                <button type='button' onclick="addBelowTrainingSection(${i})">Add below</button>
-                <button type='button' onclick="removeTrainingSection(${i})">Remove</button>
-            </div>`;
+            html += `
+                    <tr>
+                        <td>
+                            <p id="lectureEditorForm_training${i}_trainingId">${trainingId}</p>
+                        </td>
+                        <td>
+                            <input type="text" id="lectureEditorForm_training${i}_dateStart" name="lectureEditorForm_training${i}_dateStart" value="${dateStart}">
+                        </td>
+                        <td>
+                            <input type="text" id="lectureEditorForm_training${i}_venue" name="lectureEditorForm_training${i}_venue" value="${venue}">
+                        </td>
+                        <td>
+                            <input type="text" id="lectureEditorForm_training${i}_province" name="lectureEditorForm_training${i}_province" value="${province}">
+                        </td>
+                        <td>
+                            <input type="text" id="lectureEditorForm_training${i}_notes" name="lectureEditorForm_training${i}_notes" value="${notes}">
+                        </td>
+                        <td>
+                            <button type='button' onclick="removeTrainingSection(${i})">Remove</button>
+                        </td>
+                        <td>
+                            <p id="lectureEditorForm_training${i}_numofbookings">${numOfBookings}</p>
+                        </td>
+                    </tr>
+                    <p id="lectureEditorForm_training${i}_isCanceled"></p>`;
         }
-        $('#lectureEditorForm_trainingsBox').append(html);
     }
+    html +=`</table>
+            <button type='button' onclick="addBelowTrainingSection(${lectureData.trainings.length - 1})">Add below</button>
+        </div>`;
+    $('#lectureEditorForm_trainingsBox').append(html);
     // for lectureData lecture
     for (let i = 0; i < lectureData.data.length; i++) {
         const sectionName = lectureData.data[i].sectionName;
@@ -206,7 +249,9 @@ function updateLectureFormData(lectureData) {
 
 function getLectureFormData() {
     let lectureData = {data: [], trainings: []};
-    for (let i = 0; i < $("#lectureEditorForm_trainingsBox").children().length; i++) {
+    let i = 0;
+    while ($(`#lectureEditorForm_training${i}_trainingId`).length != 0) {
+        console.log(i, $(`#lectureEditorForm_training${i}_trainingId`))
         lectureData.trainings.push({
             trainingId: $(`#lectureEditorForm_training${i}_trainingId`).html(),
             dateStart: $(`#lectureEditorForm_training${i}_dateStart`).val(),
@@ -214,8 +259,11 @@ function getLectureFormData() {
             province: $(`#lectureEditorForm_training${i}_province`).val(),
             notes: $(`#lectureEditorForm_training${i}_notes`).val(),
             isCanceled: $(`#lectureEditorForm_training${i}_isCanceled`).html() != "",
+            numOfBookings: $(`#lectureEditorForm_training${i}_numofbookings`).text(),
         });
+        i++;
     }
+    console.log(lectureData.trainings)
     for (let i = 0; i < $("#lectureEditorForm_dataBox").children().length; i++) {
         lectureData.data.push({
             sectionName: $(`#lectureEditorForm_sectionName${i}`).val(),
@@ -250,16 +298,15 @@ function removeLectureSection(i) {
 function addBelowTrainingSection(i) {
     let lectureData = getLectureFormData();
     const sicherLectureId = new URLSearchParams(window.location.search).get("sicherLectureId");
-    const latestTrainingId = String(Number(lectureData.trainings[lectureData.trainings.length-1].trainingId) + 1);
+    const latestTrainingId = (Number(lectureData.trainings[lectureData.trainings.length-1].trainingId) + 1) % 1000;
     const newTraining = {
-        trainingId: `${sicherLectureId}${latestTrainingId
-            .substring(latestTrainingId.length -3,latestTrainingId.length)
-            .padStart(3, '0')}`,
+        trainingId: `${sicherLectureId}${String(latestTrainingId).padStart(3, '0')}`,
         dateStart: "",
         venue: "",
         province: "",
         notes: "",
         isCanceled: false,
+        numOfBookings: 0,
     }
     lectureData.trainings.push(newTraining); // insert element at i, deleting 0 elemenst
     updateLectureFormData(lectureData);
@@ -267,6 +314,11 @@ function addBelowTrainingSection(i) {
 
 function removeTrainingSection(i) {
     let lectureData = getLectureFormData();
+    if (lectureData.trainings[i].numOfBookings > 0) {
+        alert("You cannot delete trainings with bookings already!");
+        return;
+    }
+
     let numActiveTrainings = 0;
     for (let i = 0; i < lectureData.trainings.length; i++) {
         if (!lectureData.trainings[i].isCanceled) numActiveTrainings++;

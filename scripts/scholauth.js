@@ -249,4 +249,8 @@ Error: ${e}`);
     $(".error-text").each(function() {
         $(this).addClass("hidden");
     });
+    $("#register-password").on("focus", () => {
+        console.log("a")
+        $("#register-password-hints").removeClass("hidden");
+    });
 });

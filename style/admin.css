@@ -28,6 +28,14 @@ td {
     overflow: hidden;
     white-space: nowrap;
 }
+table input {
+    width: 4rem;
+    margin-bottom: 0;
+}
+table p {
+    text-align: center;
+    font-size: 10pt;
+}
 input, textarea {
     margin-top: .5rem;
     padding: 1rem;

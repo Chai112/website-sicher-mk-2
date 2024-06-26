@@ -31,7 +31,6 @@ async function init() {
         const trainingData = JSON.parse(decodeURI(lectureData.data)).trainings;
         let foundTraining = false;
         $("#booking-id").text(bookingId);
-        $("#training-id").text(trainingId);
         for (let i = 0; i < trainingData.length; i++) {
             const training = trainingData[i];
             if (training.trainingId.toString() === trainingId.toString()) {

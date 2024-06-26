@@ -119,6 +119,13 @@
     max-width: 20rem;
  }
 
+ .scholauth a {
+    text-decoration: none !important;
+    color: grey !important;
+    font-weight: normal;
+    font-size: 10pt;
+ }
+
  @keyframes shimmer {
     to {
        background-position-x: 0%
