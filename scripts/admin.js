@@ -87,6 +87,7 @@ async function removeLecture (sicherLectureId, lectureName) {
 }
 
 async function initLectureEditorForm() {
+
     let sicherLectureId = new URLSearchParams(window.location.search).get("sicherLectureId");
     let data = await fetchServer({action: "sicher_getLecture", sicherLectureId: sicherLectureId});
 
@@ -129,13 +130,18 @@ async function initLectureEditorForm() {
     updateLectureFormData(lectureData);
 
     $( "#lectureEditorForm" ).on( "submit", function( event ) {
+        // Remove "are you sure you want to exit?" prompt
+        window.onbeforeunload = null;
         changeLecture();
         event.preventDefault();
     });
 }
 
 function updateLectureFormData(lectureData) {
-    console.log(lectureData.trainings);
+    // Enable "are you sure you want to leave this page?" navigation prompt
+    window.onbeforeunload = function() {
+        return true;
+    };
     $('#lectureEditorForm_dataBox').empty(); // clear all children
     $('#lectureEditorForm_trainingsBox').empty(); // clear all children
     let sicherLectureId = new URLSearchParams(window.location.search).get("sicherLectureId");

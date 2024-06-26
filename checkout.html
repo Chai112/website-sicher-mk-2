@@ -67,7 +67,7 @@
                                         <label for="password">Password</label><br>
                                         <label class="error-text"   id="register-error-password">Password Error</label>
                                         <input type="password"      id="register-password" name="password"><br>
-                                        <a id="register-password-hints" class="hidden">* Must be longer than 8 chars<br>* Must contain at least a number<br>* Must contain at least a letter</a>
+                                        <div class="scholauth-hint scholauth-password-hints hidden" id="register-password-hints"></div>
                                         <div class="spacer-mini"></div>
                                         <div class="scholauth-button-container">
                                             <button id="register-button" type="button" onclick="register()" class="button">Register</button>
@@ -84,7 +84,7 @@
                                         <label for="password">Password</label><br>
                                         <label class="error-text"   id="login-error-password">Password Error</label>
                                         <input type="password"      id="login-password" name="password"><br>
-                                        <a href="forgot-password">Forgot Password?</a>
+                                        <div class="scholauth-hint" id="toggleforgotpassword-button" onclick="toggleForgotpassword()">Forgot Password?</div>
                                         <div class="spacer-mini"></div>
                                         <div class="scholauth-button-container">
                                             <button id="register-button" type="button" onclick="login()" class="button">Login</button>
@@ -92,6 +92,41 @@
                                         </div>
                                         <br>
                                     </form>
+                                </div>
+                                <div id="forgotpassword-page" class="scholauth-page hidden">
+                                    <form id="login-form">
+                                        <div class="scholauth-h1">Forgot Password?</div><br>
+                                        <div class="scholauth-p">Please enter the email for that account.</div>
+                                        <label for="email">Email</label><br>
+                                        <label class="error-text"   id="forgotpassword-error-email">Email Error</label>
+                                        <input type="text"          id="forgotpassword-email" name="email"><br>
+                                        <div class="scholauth-button-container">
+                                            <button id="forgotpassword-button" type="button" onclick="forgotPassword()" class="button">Submit</button>
+                                        </div>
+                                        <br>
+                                    </form>
+                                </div>
+                                <div id="forgotpasswordsent-page" class="scholauth-page hidden">
+                                    <div class="scholauth-h1">Reset link sent</div><br>
+                                    <div class="scholauth-p">A password reset link has been sent to your email. Please check your email in 1-3 minutes. Thank you.</div>
+                                </div>
+                                <div id="resetpassword-page" class="scholauth-page hidden">
+                                    <form id="login-form">
+                                        <div class="scholauth-h1">Password reset</div><br>
+                                        <div class="scholauth-p">Please enter your new password for that account.</div><br>
+                                        <label for="password">New Password</label><br>
+                                        <label class="error-text"   id="resetpassword-error-password">Password Error</label>
+                                        <input type="password"      id="resetpassword-password" name="password"><br>
+                                        <div class="scholauth-hint scholauth-password-hints"></div>
+                                        <div class="scholauth-button-container">
+                                            <button id="resetpassword-button" type="button" onclick="resetPassword()" class="button">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="resetpasswordsent-page" class="scholauth-page hidden">
+                                    <div class="scholauth-h1">Please log in again.</div><br>
+                                    <div class="scholauth-p">Your password has been successfully updated. Please log in again with your new password.</div>
+                                    <button onclick="gotoScholauthPage('login')" class="button">Go back to login</button>
                                 </div>
                                 <div id="init-page" class="scholauth-page hidden">
                                     <div class="scholauth-shimmer"></div>

@@ -64,6 +64,10 @@ function toggleLoginRegister() {
     }
 }
 
+function toggleForgotpassword() {
+    gotoScholauthPage("forgotpassword");
+}
+
 function setButtonLoading(isLoading) {
     if (isLoading) {
         $("#loader").removeClass("hidden");
@@ -192,7 +196,77 @@ async function register() {
     } catch (e) {
         alert("Something went wrong.");
         alert(e);
-        _showError('register-error-email', "Something went wrong.");
+        showError('register-error-email', "Something went wrong.");
+        setButtonLoading(false);
+        return;
+    }
+}
+
+async function forgotPassword() {
+    const email = $("#forgotpassword-email").val();
+
+    // clear errors
+    showError('forgotpassword-error-email', "");
+
+    setButtonLoading(true);
+    try {
+        const response = await fetchServer({
+            action: "forgotPassword",
+            username: email,
+            organizationId: 0,
+        });
+        let responseBody = await response.json();
+        if (response.status === 200) {
+            // successful
+            gotoScholauthPage("forgotpasswordsent")
+            setButtonLoading(false);
+        } else {
+            const errorData = responseBody.errorData;
+            showError('forgotpassword-error-email', errorData.message);
+            setButtonLoading(false);
+            return;
+        }
+    } catch (e) {
+        alert("Something went wrong.");
+        alert(e);
+        showError('forgotpassword-error-email', "Something went wrong.");
+        setButtonLoading(false);
+        return;
+    }
+
+}
+
+async function resetPassword() {
+    const password = $("#resetpassword-password").val();
+    const forgotPasswordToken = new URLSearchParams(window.location.search).get("forgotPasswordToken");
+    console.log(forgotPasswordToken)
+
+    // clear errors
+    showError('resetpassword-error-password', "");
+
+    setButtonLoading(true);
+    try {
+        const response = await fetchServer({
+            action: "resetPassword",
+            forgotPasswordToken: forgotPasswordToken,
+            password: password,
+        });
+        let responseBody = await response.json();
+        if (response.status === 200) {
+            // successful
+            gotoScholauthPage("resetpasswordsent");
+            setButtonLoading(false);
+        } else {
+            const errorData = responseBody.errorData;
+            showError('resetpassword-error-password', errorData.message);
+            setButtonLoading(false);
+            return;
+        }
+    } catch (e) {
+        console.log(e)
+        alert("Something went wrong.");
+        alert(e);
+        showError('resetpassword-error-password', "Something went wrong.");
         setButtonLoading(false);
         return;
     }
@@ -203,6 +277,10 @@ function gotoScholauthPage(page) {
     $("#register-page").addClass("hidden");
     $("#login-page").addClass("hidden");
     $("#checkout-page").addClass("hidden");
+    $("#forgotpassword-page").addClass("hidden");
+    $("#forgotpasswordsent-page").addClass("hidden");
+    $("#resetpassword-page").addClass("hidden");
+    $("#resetpasswordsent-page").addClass("hidden");
     switch (page) {
         case "init":
             $("#init-page").removeClass("hidden");
@@ -215,6 +293,18 @@ function gotoScholauthPage(page) {
             break;
         case "checkout":
             $("#checkout-page").removeClass("hidden");
+            break;
+        case "forgotpassword":
+            $("#forgotpassword-page").removeClass("hidden");
+            break;
+        case "forgotpasswordsent":
+            $("#forgotpasswordsent-page").removeClass("hidden");
+            break;
+        case "resetpassword":
+            $("#resetpassword-page").removeClass("hidden");
+            break;
+        case "resetpasswordsent":
+            $("#resetpasswordsent-page").removeClass("hidden");
             break;
     }
 }
@@ -236,21 +326,24 @@ Error: ${e}`);
         $("#init-page").addClass("hidden");
         return;
     }
-    gotoScholauthPage("register");
-  
-    // clear fields
-    $("#register-name").val("");
-    $("#register-email").val("");
-    $("#register-password").val("");
-    $("#login-email").val("");
-    $("#login-password").val("");
+
+    const forgotPasswordToken = new URLSearchParams(window.location.search).get("forgotPasswordToken");
+    if (forgotPasswordToken === null) {
+        gotoScholauthPage("register");
+    } else {
+        gotoScholauthPage("resetpassword");
+    }
 
     // hide all errors
     $(".error-text").each(function() {
         $(this).addClass("hidden");
     });
-    $("#register-password").on("focus", () => {
-        console.log("a")
+
+    // show password hints
+    $(".scholauth-password-hints").each(function () {
+        $(this).html("* Must be longer than 8 characters<br>* Must contain at least a number<br>* Must contain at least a letter");
+    });
+    $("#register-password").on("focus", function () {
         $("#register-password-hints").removeClass("hidden");
     });
 });

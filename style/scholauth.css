@@ -30,6 +30,20 @@
     font-size: 12pt;
     line-height: 1.5;
 }
+ .scholauth .scholauth-hint {
+    text-decoration: none;
+    color: grey;
+    font-weight: normal;
+    font-size: 10pt;
+ }
+ .scholauth #toggleforgotpassword-button {
+    cursor: pointer;
+    display: inline;
+    text-decoration: underline;
+ }
+ .scholauth #toggleforgotpassword-button:hover {
+    color: #D41C3A;
+ }
 .scholauth input[type=text], input[type=password], select, textarea {
     background-color: white;
     border-radius: 8px;
@@ -117,13 +131,6 @@
     background-position-x: 100%;
     animation: shimmer 1s infinite linear;
     max-width: 20rem;
- }
-
- .scholauth a {
-    text-decoration: none !important;
-    color: grey !important;
-    font-weight: normal;
-    font-size: 10pt;
  }
 
  @keyframes shimmer {
