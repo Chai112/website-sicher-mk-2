@@ -32,6 +32,7 @@ async function checkout() {
     gotoScholauthPage("checkout");
     // TODO change this function
     // this is specific to the type of thing you use the scholauth for
+    /*
     const trainingId = new URLSearchParams(window.location.search).get("trainingId");
     const token = localStorage.getItem("scholauth-token");
     const response = await fetchServer({
@@ -42,6 +43,7 @@ async function checkout() {
     const responseBody = await response.json();
     const bookingId = responseBody.data;
     window.location.href = `reserved.html?bookingId=${bookingId}`;
+    */
 }
 
 function showError(idName, value) {
@@ -310,7 +312,20 @@ function gotoScholauthPage(page) {
 }
 
 $(document).ready(async function(){
+    // hide all errors
+    $(".error-text").each(function() {
+        $(this).addClass("hidden");
+    });
+
+    // check forgotPasswordToken
+    const forgotPasswordToken = new URLSearchParams(window.location.search).get("forgotPasswordToken");
+    if (forgotPasswordToken !== null) {
+        gotoScholauthPage("resetpassword")
+        return;
+    }
     gotoScholauthPage("init");
+
+    // try authenticate
     try {
         if (await isAuthenticated()) {
             await new Promise(resolve => setTimeout(resolve, 1000));
@@ -320,24 +335,11 @@ $(document).ready(async function(){
 
     } catch (e) {
         $("#init-error").removeClass("hidden");
-        $("#init-error").text(`Failed to connect to Scholarity
-Please email contact@scholarity.io
-Error: ${e}`);
+        $("#init-error").html(`Failed to connect to Scholarity<br>Please email contact@scholarity.io<br>Error: ${e}`);
         $("#init-page").addClass("hidden");
         return;
     }
-
-    const forgotPasswordToken = new URLSearchParams(window.location.search).get("forgotPasswordToken");
-    if (forgotPasswordToken === null) {
-        gotoScholauthPage("register");
-    } else {
-        gotoScholauthPage("resetpassword");
-    }
-
-    // hide all errors
-    $(".error-text").each(function() {
-        $(this).addClass("hidden");
-    });
+    gotoScholauthPage("register");
 
     // show password hints
     $(".scholauth-password-hints").each(function () {
