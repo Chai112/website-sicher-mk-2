@@ -32,7 +32,6 @@ async function checkout() {
     gotoScholauthPage("checkout");
     // TODO change this function
     // this is specific to the type of thing you use the scholauth for
-    /*
     const trainingId = new URLSearchParams(window.location.search).get("trainingId");
     const token = localStorage.getItem("scholauth-token");
     const response = await fetchServer({
@@ -43,7 +42,6 @@ async function checkout() {
     const responseBody = await response.json();
     const bookingId = responseBody.data;
     window.location.href = `reserved.html?bookingId=${bookingId}`;
-    */
 }
 
 function showError(idName, value) {
