@@ -11,6 +11,7 @@ async function fetchServer(data) {
 }
 
 async function isAuthenticated() {
+        localStorage.setItem("scholauth-token", undefined);
     const token = localStorage.getItem("scholauth-token");
     const userData = await fetchServer({action: "getUserFromToken", token: token});
     if (userData.status === 403) {
